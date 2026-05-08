@@ -11,8 +11,7 @@
     }
 
     svg {
-      background: var(--bg);
-      overflow: hidden;
+      overflow: visible;
     }
 
     .ambient-glow {
@@ -176,7 +175,6 @@
     </mask>
   </defs>
 
-  <rect width="1350" height="1165" fill="#000000" />
   <ellipse class="ambient-glow" cx="675" cy="560" rx="590" ry="490" fill="url(#backgroundGlow)" />
 
   <g class="logo-mark">
