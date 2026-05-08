@@ -2,11 +2,14 @@
 html,
 body {
     width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     background-color: var(--color-bg);
 }
 
 body {
     overflow-x: hidden;
+    overscroll-behavior-x: none;
     font-family: var(--font-body);
     color: var(--text);
     background:
@@ -34,6 +37,8 @@ body::before {
 
 body.menu-open {
     overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: pan-y;
 }
 
 body.is-loading {
@@ -544,6 +549,7 @@ body.site-loaded .jv-preloader__line {
         position: relative;
         display: inline-flex;
         margin-left: auto;
+        z-index: 130;
     }
 
     .header-cta {
@@ -552,28 +558,70 @@ body.site-loaded .jv-preloader__line {
 
     .main-nav {
         position: fixed;
-        top: 1rem;
-        right: 1rem;
-        bottom: 1rem;
-        width: min(360px, calc(100vw - 2rem));
-        padding: 5.9rem 1.25rem 1.5rem;
+        inset: 0;
+        z-index: 120;
+        width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        height: 100dvh;
+        padding:
+            max(5.75rem, calc(env(safe-area-inset-top) + 5rem))
+            max(1.5rem, calc(env(safe-area-inset-right) + 1.25rem))
+            max(2rem, calc(env(safe-area-inset-bottom) + 1.5rem))
+            max(1.5rem, calc(env(safe-area-inset-left) + 1.25rem));
         flex-direction: column;
-        align-items: stretch;
+        justify-content: center;
+        align-items: center;
+        gap: 0.9rem;
         margin-left: 0;
-        border: 1px solid var(--border-strong);
-        border-radius: 30px;
-        background: rgba(9, 9, 10, 0.96);
-        box-shadow: var(--shadow);
-        transform: translateX(112%);
+        border: 0;
+        border-radius: 0;
+        background:
+            radial-gradient(circle at 80% 16%, rgba(255, 255, 255, 0.08), transparent 28%),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 20%),
+            rgba(4, 4, 5, 0.96);
+        backdrop-filter: blur(18px);
+        box-shadow: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition:
+            opacity var(--transition),
+            visibility var(--transition),
+            transform var(--transition);
+        overflow-y: auto;
+        overflow-x: hidden;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
     }
 
-    .main-nav.open {
-        transform: translateX(0);
+    .main-nav.open,
+    body.menu-open .main-nav {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
     }
 
     .main-nav a {
-        padding: 1rem 1.1rem;
-        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: min(100%, 22rem);
+        padding: 1rem 1.2rem;
+        font-size: clamp(1.05rem, 4vw, 1.28rem);
+        text-align: center;
+    }
+
+    body.menu-open .menu-toggle {
+        position: fixed;
+        top: max(1rem, calc(env(safe-area-inset-top) + 0.75rem));
+        right: max(1rem, calc(env(safe-area-inset-right) + 1rem));
+        margin-left: 0;
+        border-color: var(--border-strong);
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow-inset);
     }
 }
 
