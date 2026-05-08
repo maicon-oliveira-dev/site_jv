@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JV Agência | Carta de Recomendação</title>
-    <link rel="preload" href="./assets/img/logo-jv.svg" as="image" type="image/svg+xml">
+    <title>JV Agência | Recomendações</title>
+    <meta name="description" content="Veja como a JV Agência costuma ser percebida por clientes e parceiros em projetos de presença digital premium.">
+    <meta name="theme-color" content="#090806">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="./assets/img/logo-jv-preloader.svg" as="image" type="image/svg+xml">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/global.css">
@@ -12,73 +18,173 @@
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/pages.css">
 </head>
-<body>
-    <div class="preloader" id="preloader">
-        <img src="assets/img/logo-jv-white.svg" alt="JV Agência" class="preloader-logo">
-        <span>Carregando recomendações...</span>
+<body class="page-recommendations">
+    <div id="jv-preloader" class="jv-preloader" aria-label="Carregando site JV Agência">
+        <img src="./assets/img/logo-jv-preloader.svg" alt="Logo JV Agência" class="jv-preloader__logo">
     </div>
+
     <header class="site-header">
-        <div class="brand">
-            <img src="assets/img/logo-jv-white.svg" alt="JV Agência" class="brand-logo">
-            <span>JV Agência</span>
+        <div class="container">
+            <div class="header-inner">
+                <a class="brand" href="index.html" aria-label="JV Agência - página inicial">
+                    <img src="assets/img/logo-jv-white.svg" alt="" class="brand-logo" aria-hidden="true">
+                    <div class="brand-copy">
+                        <span class="brand-name">JV Agência</span>
+                        <span class="brand-tag">Estratégia, design e tecnologia</span>
+                    </div>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu principal" aria-controls="mainNav" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="main-nav" id="mainNav" aria-label="Principal">
+                    <a href="index.html">Home</a>
+                    <a href="sobre.html">Sobre</a>
+                    <a href="servicos.html">Serviços</a>
+                    <a href="equipe.html">Equipe</a>
+                    <a href="carta-recomendacao.html" aria-current="page">Recomendações</a>
+                    <a href="contato.html">Contato</a>
+                </nav>
+                <a href="contato.html" class="header-cta">Solicitar briefing</a>
+            </div>
         </div>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-            <span></span><span></span><span></span>
-        </button>
-        <nav class="main-nav" id="mainNav">
-            <a href="index.html">Home</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="servicos.html">Serviços</a>
-            <a href="equipe.html">Equipe</a>
-            <a href="carta-recomendacao.html">Carta</a>
-            <a href="contato.html">Contato</a>
-        </nav>
     </header>
 
     <main>
-        <section class="page-hero page-hero--compact fade-up">
-            <div>
-                <span class="eyebrow">Carta de recomendação</span>
-                <h1>Cases que comprovam nossa entrega premium.</h1>
-                <p>Resultados reais em mercados competitivos, apresentados de forma transparente e estratégica.</p>
+        <section class="page-hero">
+            <div class="container hero-grid">
+                <div class="hero-copy" data-reveal>
+                    <span class="section-tag">Recomendações</span>
+                    <h1>Confiança que se traduz em recomendação clara.</h1>
+                    <p class="lead">A melhor validação de um projeto aparece quando o cliente percebe que a marca passou a comunicar mais força, mais organização e mais maturidade do que antes.</p>
+                    <ul class="trust-list">
+                        <li>Leitura estratégica</li>
+                        <li>Execução cuidadosa</li>
+                        <li>Presença com autoridade</li>
+                    </ul>
+                </div>
+
+                <aside class="spotlight-panel hero-panel" data-reveal data-spotlight>
+                    <span class="panel-eyebrow">Percepções recorrentes</span>
+                    <h2>A JV costuma ser lembrada pela combinação entre densidade estratégica e acabamento.</h2>
+                    <div class="signal-stack">
+                        <article class="signal-card">
+                            <strong>Entende rápido o problema</strong>
+                            <p>A leitura do cenário ajuda a marca a agir com mais direção e menos tentativa aleatória.</p>
+                        </article>
+                        <article class="signal-card">
+                            <strong>Conecta forma e função</strong>
+                            <p>O visual não vem separado da intenção comercial, o que gera mais coerência de percepção.</p>
+                        </article>
+                        <article class="signal-card">
+                            <strong>Entrega com critério</strong>
+                            <p>Detalhe, narrativa e tecnologia caminham juntos para sustentar uma presença mais robusta.</p>
+                        </article>
+                    </div>
+                </aside>
             </div>
         </section>
 
-        <section class="section-grid section-grid--2 fade-up">
-            <article class="glass-card">
-                <h3>Cliente A</h3>
-                <p>“A JV Agência entregou uma estratégia de marketing que elevou nossa captação em 68% em seis meses.”</p>
-            </article>
-            <article class="glass-card">
-                <h3>Cliente B</h3>
-                <p>“O novo site gerou receita imediata e posicionou nossa marca para novas parcerias corporativas.”</p>
-            </article>
-            <article class="glass-card">
-                <h3>Cliente C</h3>
-                <p>“O trabalho de tráfego pago e dados trouxe maior previsibilidade para nossas campanhas.”</p>
-            </article>
-            <article class="glass-card">
-                <h3>Cliente D</h3>
-                <p>“Equipe moderna, dedicada e com visão de negócio. Um diferencial para qualquer empresa séria.”</p>
-            </article>
+        <section class="section">
+            <div class="container split-section">
+                <article class="letter-card" data-reveal>
+                    <span class="section-tag">Carta institucional</span>
+                    <div class="letter-body">
+                        <h2>Recomendamos a JV pela capacidade de transformar presença digital em percepção concreta de valor.</h2>
+                        <p>Ao longo do projeto, a equipe demonstrou leitura estratégica do negócio, sensibilidade para reposicionar a marca e rigor na construção dos ativos digitais.</p>
+                        <p>O diferencial esteve na forma como estratégia, conteúdo, interface e tecnologia foram conduzidos dentro de um mesmo raciocínio, sem perda de coerência entre intenção e entrega.</p>
+                        <p>O resultado foi uma presença mais madura, clara e alinhada ao nível da operação que já existia internamente, mas ainda não era percebida pelo mercado com a mesma força.</p>
+                        <p class="small-note">Trecho-modelo que representa o tipo de percepção mais recorrente em projetos conduzidos com confidencialidade.</p>
+                    </div>
+                    <div class="letter-signature">Cliente atendido em regime confidencial • setor B2B</div>
+                </article>
+
+                <div class="stack-grid">
+                    <article class="quote-card" data-reveal>
+                        <h3>Reposicionamento da marca</h3>
+                        <blockquote>“A JV conseguiu traduzir nosso nível de entrega para uma presença digital muito mais segura e convincente.”</blockquote>
+                        <span class="quote-role">Diretoria comercial • empresa de serviços</span>
+                    </article>
+                    <article class="quote-card" data-reveal>
+                        <h3>Construção de site premium</h3>
+                        <blockquote>“O projeto elevou a forma como o mercado percebe a empresa antes mesmo da primeira reunião.”</blockquote>
+                        <span class="quote-role">Sócio fundador • operação B2B</span>
+                    </article>
+                    <article class="quote-card" data-reveal>
+                        <h3>Estrutura para aquisição</h3>
+                        <blockquote>“Campanhas, páginas e mensagem passaram a funcionar com muito mais unidade e segurança.”</blockquote>
+                        <span class="quote-role">Gestão de marketing • indústria</span>
+                    </article>
+                </div>
+            </div>
         </section>
 
-        <section class="section-cta fade-up">
-            <div>
-                <h2>Quer uma recomendação baseada em performance e credibilidade?</h2>
-                <a href="contato.html" class="btn btn-primary">Solicitar diagnóstico</a>
+        <section class="section">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <span class="section-tag">O que costuma aparecer</span>
+                    <h2>Três pontos que aparecem com frequência nas recomendações.</h2>
+                    <p>Mesmo em segmentos diferentes, a percepção sobre o trabalho tende a convergir nos mesmos critérios de valor.</p>
+                </div>
+                <div class="card-grid card-grid--three">
+                    <article class="value-card" data-reveal>
+                        <h3>Clareza na direção</h3>
+                        <p>A marca passa a entender melhor o que comunicar, o que cortar e o que destacar para se diferenciar.</p>
+                    </article>
+                    <article class="value-card" data-reveal>
+                        <h3>Acabamento acima da média</h3>
+                        <p>O projeto transmite cuidado, intenção e refinamento, o que muda a leitura do mercado sobre a empresa.</p>
+                    </article>
+                    <article class="value-card" data-reveal>
+                        <h3>Mais confiança comercial</h3>
+                        <p>Site, páginas e materiais deixam de ser apenas presença e passam a apoiar negociação, autoridade e avanço.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="cta-panel" data-reveal data-spotlight>
+                    <span class="section-tag">Próxima conversa</span>
+                    <h2>Se a sua marca precisa de uma recomendação futura, o trabalho começa pela base.</h2>
+                    <p>A JV pode redesenhar essa base com uma presença que represente melhor o nível real do negócio.</p>
+                    <div class="hero-actions">
+                        <a href="contato.html" class="btn btn-primary">Iniciar conversa</a>
+                        <a href="servicos.html" class="btn btn-secondary">Ver serviços</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer fade-up">
-        <div>
-            <p>JV Agência — resultados comprovados para marcas que querem liderar.</p>
-            <p><a href="contato.html">contato@jvagencia.com.br</a> · +55 11 99999-9999</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid" data-reveal>
+                <div class="footer-brand">
+                    <img src="assets/img/logo-jv-white.svg" alt="" aria-hidden="true">
+                    <p>Estratégia, design e tecnologia para marcas que precisam vender com mais autoridade e presença digital compatível com a própria entrega.</p>
+                    <span class="footer-note">Atendimento para projetos de posicionamento, sites, landing pages, mídia e estrutura digital.</span>
+                </div>
+                <div class="footer-column">
+                    <span class="footer-title">Mapa</span>
+                    <a href="index.html">Home</a>
+                    <a href="sobre.html">Sobre a JV</a>
+                    <a href="servicos.html">Serviços</a>
+                    <a href="equipe.html">Equipe</a>
+                </div>
+                <div class="footer-column">
+                    <span class="footer-title">Contato</span>
+                    <a href="mailto:contato@jvagencia.com.br">contato@jvagencia.com.br</a>
+                    <a href="tel:+5511999999999">+55 11 99999-9999</a>
+                    <span class="footer-meta">São Paulo • atendimento remoto e presencial</span>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
     <script src="assets/js/menu.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/scroll-effects.js"></script>

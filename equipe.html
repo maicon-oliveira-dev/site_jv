@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JV Agência | Equipe</title>
-    <link rel="preload" href="./assets/img/logo-jv.svg" as="image" type="image/svg+xml">
+    <meta name="description" content="Conheça a lógica de equipe da JV Agência: uma operação enxuta, multidisciplinar e sênior para projetos digitais premium.">
+    <meta name="theme-color" content="#090806">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="./assets/img/logo-jv-preloader.svg" as="image" type="image/svg+xml">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/global.css">
@@ -12,73 +18,206 @@
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/pages.css">
 </head>
-<body>
-    <div class="preloader" id="preloader">
-        <img src="assets/img/logo-jv-white.svg" alt="JV Agência" class="preloader-logo">
-        <span>Equipe em foco...</span>
+<body class="page-team">
+    <div id="jv-preloader" class="jv-preloader" aria-label="Carregando site JV Agência">
+        <img src="./assets/img/logo-jv-preloader.svg" alt="Logo JV Agência" class="jv-preloader__logo">
     </div>
+
     <header class="site-header">
-        <div class="brand">
-            <img src="assets/img/logo-jv-white.svg" alt="JV Agência" class="brand-logo">
-            <span>JV Agência</span>
+        <div class="container">
+            <div class="header-inner">
+                <a class="brand" href="index.html" aria-label="JV Agência - página inicial">
+                    <img src="assets/img/logo-jv-white.svg" alt="" class="brand-logo" aria-hidden="true">
+                    <div class="brand-copy">
+                        <span class="brand-name">JV Agência</span>
+                        <span class="brand-tag">Estratégia, design e tecnologia</span>
+                    </div>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu principal" aria-controls="mainNav" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="main-nav" id="mainNav" aria-label="Principal">
+                    <a href="index.html">Home</a>
+                    <a href="sobre.html">Sobre</a>
+                    <a href="servicos.html">Serviços</a>
+                    <a href="equipe.html" aria-current="page">Equipe</a>
+                    <a href="carta-recomendacao.html">Recomendações</a>
+                    <a href="contato.html">Contato</a>
+                </nav>
+                <a href="contato.html" class="header-cta">Solicitar briefing</a>
+            </div>
         </div>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-            <span></span><span></span><span></span>
-        </button>
-        <nav class="main-nav" id="mainNav">
-            <a href="index.html">Home</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="servicos.html">Serviços</a>
-            <a href="equipe.html">Equipe</a>
-            <a href="carta-recomendacao.html">Carta</a>
-            <a href="contato.html">Contato</a>
-        </nav>
     </header>
 
     <main>
-        <section class="page-hero page-hero--compact fade-up">
-            <div>
-                <span class="eyebrow">Equipe</span>
-                <h1>Profissionais experientes em digital corporativo e performance.</h1>
-                <p>Estratégas, desenvolvedores e designers com histórico em projetos B2B e soluções sob medida.</p>
+        <section class="page-hero">
+            <div class="container hero-grid">
+                <div class="hero-copy" data-reveal>
+                    <span class="section-tag">Equipe</span>
+                    <h1>Time enxuto, multidisciplinar e sênior onde importa.</h1>
+                    <p class="lead">A JV opera com uma lógica direta: menos repasse, mais leitura estratégica e mais controle de qualidade sobre o que chega ao cliente e ao mercado.</p>
+                    <ul class="trust-list">
+                        <li>Estratégia próxima da execução</li>
+                        <li>Decisão criativa com visão comercial</li>
+                        <li>Especialidade aplicada ao contexto</li>
+                    </ul>
+                </div>
+
+                <aside class="spotlight-panel hero-panel" data-reveal data-spotlight>
+                    <span class="panel-eyebrow">Como o time se organiza</span>
+                    <h2>Não existe equipe inflada quando o objetivo é manter consistência de entrega.</h2>
+                    <div class="signal-stack">
+                        <article class="signal-card">
+                            <strong>Liderança direta</strong>
+                            <p>Quem pensa o projeto acompanha de perto o que vai para layout, página e campanha.</p>
+                        </article>
+                        <article class="signal-card">
+                            <strong>Especialistas por frente</strong>
+                            <p>Cada projeto reúne as disciplinas necessárias sem virar uma operação pesada e lenta.</p>
+                        </article>
+                        <article class="signal-card">
+                            <strong>Acabamento controlado</strong>
+                            <p>A atenção ao detalhe fica protegida porque a execução não se perde entre muitas camadas.</p>
+                        </article>
+                    </div>
+                </aside>
             </div>
         </section>
 
-        <section class="team-grid fade-up">
-            <article class="glass-card team-card">
-                <h3>Lucas Silva</h3>
-                <p>Diretor de estratégia e growth digital.</p>
-            </article>
-            <article class="glass-card team-card">
-                <h3>Ana Pereira</h3>
-                <p>Head de criação e UX para marcas premium.</p>
-            </article>
-            <article class="glass-card team-card">
-                <h3>Bruno Melo</h3>
-                <p>Especialista em desenvolvimento front-end e e-commerce.</p>
-            </article>
-            <article class="glass-card team-card">
-                <h3>Carolina Reis</h3>
-                <p>Gestora de mídia e análise de tráfego pago.</p>
-            </article>
+        <section class="section">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <span class="section-tag">Disciplinas</span>
+                    <h2>As frentes que entram para construir a presença da marca.</h2>
+                    <p>A equipe é composta conforme a necessidade do projeto, mantendo senioridade nas decisões centrais e especialidade na execução.</p>
+                </div>
+                <div class="card-grid card-grid--four">
+                    <article class="value-card" data-reveal>
+                        <h3>Estratégia e posicionamento</h3>
+                        <p>Responsável por leitura de cenário, diferenciação, narrativa e prioridades de presença digital.</p>
+                    </article>
+                    <article class="value-card" data-reveal>
+                        <h3>Design e direção criativa</h3>
+                        <p>Transforma o posicionamento em interface, linguagem visual e materiais com alta percepção de valor.</p>
+                    </article>
+                    <article class="value-card" data-reveal>
+                        <h3>Desenvolvimento web</h3>
+                        <p>Converte a direção criativa em páginas rápidas, responsivas e tecnicamente sólidas.</p>
+                    </article>
+                    <article class="value-card" data-reveal>
+                        <h3>Aquisição e otimização</h3>
+                        <p>Conecta mídia, testes e leitura de performance para que a presença gere movimento real.</p>
+                    </article>
+                </div>
+            </div>
         </section>
 
-        <section class="section-cta fade-up">
-            <div>
-                <h2>Converse com a equipe que desenvolve marcas com credibilidade digital.</h2>
-                <a href="contato.html" class="btn btn-primary">Falar com a JV</a>
+        <section class="section">
+            <div class="container split-section">
+                <article class="story-card" data-reveal>
+                    <span class="section-tag">Modelo de operação</span>
+                    <h2>A equipe é montada para resolver o problema certo, não para preencher organograma.</h2>
+                    <p>Projetos diferentes pedem composições diferentes. Um site institucional premium exige uma densidade. Uma operação de aquisição contínua exige outra.</p>
+                    <p>Por isso a JV trabalha com combinação de competências conforme o momento da marca, preservando direção central e evitando excesso de pessoas interferindo no mesmo ponto.</p>
+                    <ul class="feature-list">
+                        <li>Mais precisão sobre o que precisa ser feito.</li>
+                        <li>Mais velocidade com menos desgaste operacional.</li>
+                        <li>Mais coerência entre estratégia, visual e tecnologia.</li>
+                    </ul>
+                </article>
+
+                <div class="stack-grid">
+                    <article class="option-card" data-reveal>
+                        <h3>Sem repasse desnecessário</h3>
+                        <p>A leitura do projeto não se perde entre muitas mãos antes de chegar na execução.</p>
+                    </article>
+                    <article class="option-card" data-reveal>
+                        <h3>Sem estética desconectada</h3>
+                        <p>O visual nasce de um posicionamento e de uma intenção comercial, não de uma tendência vazia.</p>
+                    </article>
+                    <article class="option-card" data-reveal>
+                        <h3>Sem operação inflada</h3>
+                        <p>A estrutura é desenhada para entregar bem, não para parecer grande no organograma.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <span class="section-tag">O que isso gera</span>
+                    <h2>Uma equipe que pensa como parceira de construção, não como fornecedor de peças soltas.</h2>
+                    <p>O cliente não recebe apenas arquivos ou páginas. Recebe uma linha de presença mais coerente, mais forte e mais segura para sustentar crescimento.</p>
+                </div>
+                <div class="process-grid">
+                    <article class="phase-card" data-reveal>
+                        <span class="phase-number">01</span>
+                        <h3>Leitura estratégica</h3>
+                        <p>O time entende a lacuna entre a marca atual e a marca que precisa ser percebida.</p>
+                    </article>
+                    <article class="phase-card" data-reveal>
+                        <span class="phase-number">02</span>
+                        <h3>Direção criativa</h3>
+                        <p>As decisões visuais e verbais passam a trabalhar na mesma camada de valor percebido.</p>
+                    </article>
+                    <article class="phase-card" data-reveal>
+                        <span class="phase-number">03</span>
+                        <h3>Entrega consistente</h3>
+                        <p>A execução ganha acabamento porque a operação foi desenhada para proteger o detalhe.</p>
+                    </article>
+                    <article class="phase-card" data-reveal>
+                        <span class="phase-number">04</span>
+                        <h3>Evolução contínua</h3>
+                        <p>O projeto não fica parado no layout: ele alimenta campanhas, conteúdo e novas frentes digitais.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="cta-panel" data-reveal data-spotlight>
+                    <span class="section-tag">Parceria</span>
+                    <h2>Se você procura uma equipe que pense com profundidade e execute com rigor, a conversa pode começar aqui.</h2>
+                    <p>A JV estrutura cada projeto com as disciplinas necessárias para elevar presença, percepção e resultado.</p>
+                    <div class="hero-actions">
+                        <a href="contato.html" class="btn btn-primary">Falar com a equipe</a>
+                        <a href="carta-recomendacao.html" class="btn btn-secondary">Ver recomendações</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer fade-up">
-        <div>
-            <p>JV Agência — talentos que unem estratégia e execução premium.</p>
-            <p><a href="contato.html">contato@jvagencia.com.br</a> · +55 11 99999-9999</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid" data-reveal>
+                <div class="footer-brand">
+                    <img src="assets/img/logo-jv-white.svg" alt="" aria-hidden="true">
+                    <p>Estratégia, design e tecnologia para marcas que precisam vender com mais autoridade e presença digital compatível com a própria entrega.</p>
+                    <span class="footer-note">Atendimento para projetos de posicionamento, sites, landing pages, mídia e estrutura digital.</span>
+                </div>
+                <div class="footer-column">
+                    <span class="footer-title">Mapa</span>
+                    <a href="index.html">Home</a>
+                    <a href="sobre.html">Sobre a JV</a>
+                    <a href="servicos.html">Serviços</a>
+                    <a href="carta-recomendacao.html">Recomendações</a>
+                </div>
+                <div class="footer-column">
+                    <span class="footer-title">Contato</span>
+                    <a href="mailto:contato@jvagencia.com.br">contato@jvagencia.com.br</a>
+                    <a href="tel:+5511999999999">+55 11 99999-9999</a>
+                    <span class="footer-meta">São Paulo • atendimento remoto e presencial</span>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
     <script src="assets/js/menu.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/scroll-effects.js"></script>

@@ -1,27 +1,22 @@
-/* Animações suaves */
-@keyframes pulseGlow {
-    0%, 100% { transform: translateY(0); opacity: 0.88; }
-    50% { transform: translateY(-4px); opacity: 1; }
+/* Motion */
+.motion-ready [data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    transition-delay: var(--reveal-delay, 0ms);
 }
 
-@keyframes heroReveal {
-    0% { opacity: 0; transform: translateY(24px) scale(0.98); }
-    100% { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.preloader img {
-    animation: pulseGlow 1.8s ease-in-out infinite;
-}
-
-.page-hero > div,
-.section-cta > div,
-.glass-card,
-.contact-card {
-    animation: heroReveal 0.9s ease-out both;
+.motion-ready [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
