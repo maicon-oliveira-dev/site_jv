@@ -1,6 +1,6 @@
 # JV Agência
 
-Site institucional premium para JV Agência com design escuro, estrutura mobile-first e foco em performance.
+Site institucional premium multi-page para a JV Agência, com direção visual escura, tipografia editorial e foco em presença digital de alto valor percebido.
 
 ## Estrutura
 
@@ -13,16 +13,21 @@ Site institucional premium para JV Agência com design escuro, estrutura mobile-
 - `assets/css/`
 - `assets/js/`
 - `assets/img/`
-- `assets/icons/`
 
-## Como usar
+## Branding
 
-1. Abrir `index.html` no navegador.
-2. Navegar pelas páginas para conferir a estrutura e o design.
-3. Editar `assets/css/` e `assets/js/` para refinar estilos e animações.
+- Logo principal: `assets/img/logo-jv.svg`
+- Logo para fundos escuros: `assets/img/logo-jv-white.svg`
+- Favicon: `assets/img/favicon.svg`
 
-## Próximos passos
+## Como visualizar
 
-- Refinar cada página com conteúdo específico de portfólio e depoimentos.
-- Ajustar imagens e ícones para branding final.
-- Implementar formulário de contato real quando o backend estiver disponível.
+1. Abra `index.html` no navegador.
+2. Navegue pelas páginas internas pelo menu principal.
+3. Ajuste textos, contatos e provas sociais conforme o material final da marca.
+
+## Observações
+
+- O site já está estruturado como multi-page e responsivo.
+- Os contatos atuais podem ser substituídos pelos definitivos da JV.
+- O formulário ainda está resolvido por links diretos de contato, sem backend.

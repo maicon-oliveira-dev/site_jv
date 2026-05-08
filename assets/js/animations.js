@@ -1,22 +1,20 @@
-const heroTitle = document.querySelector('.page-hero h1');
-if (heroTitle) {
-    heroTitle.innerHTML = heroTitle.textContent
-        .split(' ')
-        .map(word => `<span class="word">${word}</span>`)
-        .join(' ');
-}
+const spotlightPanels = document.querySelectorAll("[data-spotlight]");
 
-const animatedWords = document.querySelectorAll('.page-hero .word');
-animatedWords.forEach((word, idx) => {
-    word.style.opacity = '0';
-    word.style.display = 'inline-block';
-    word.style.transform = 'translateY(18px)';
-    word.style.transition = `opacity 0.55s ease ${idx * 0.06}s, transform 0.55s ease ${idx * 0.06}s`;
-});
+spotlightPanels.forEach((panel) => {
+    const resetSpotlight = () => {
+        panel.style.setProperty("--pointer-x", "50%");
+        panel.style.setProperty("--pointer-y", "50%");
+    };
 
-window.addEventListener('load', () => {
-    animatedWords.forEach((word) => {
-        word.style.opacity = '1';
-        word.style.transform = 'translateY(0)';
+    panel.addEventListener("pointermove", (event) => {
+        const bounds = panel.getBoundingClientRect();
+        const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+        const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+
+        panel.style.setProperty("--pointer-x", `${x}%`);
+        panel.style.setProperty("--pointer-y", `${y}%`);
     });
+
+    panel.addEventListener("pointerleave", resetSpotlight);
+    resetSpotlight();
 });
