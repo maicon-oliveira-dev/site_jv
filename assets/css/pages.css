@@ -1,0 +1,45 @@
+/* Estilos específicos de páginas */
+.page-hero p {
+    font-size: 1.1rem;
+    max-width: 42rem;
+}
+
+.services-grid .glass-card {
+    min-height: 220px;
+}
+
+.team-grid .glass-card {
+    min-height: 220px;
+}
+
+.contact-card {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-card h2 {
+    margin-bottom: 0.75rem;
+}
+
+.contact-card p {
+    color: var(--text-muted);
+}
+
+.contact-card a.btn {
+    justify-self: start;
+}
+
+@media (max-width: 720px) {
+    .page-hero {
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .page-hero > div {
+        padding: 1rem 0;
+    }
+
+    .section-cta > div {
+        padding: 1.8rem 1.1rem;
+    }
+}
