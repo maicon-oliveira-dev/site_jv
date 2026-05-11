@@ -557,6 +557,17 @@
     line-height: 1.7;
 }
 
+.page-team .hero-copy {
+    gap: 1.1rem;
+}
+
+.page-team .hero-support {
+    max-width: 38rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.72;
+}
+
 .page-about .page-hero .meta-list,
 .page-services .page-hero .meta-list,
 .page-team .page-hero .meta-list,
@@ -863,30 +874,39 @@
     box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.06);
 }
 
-.page-team .team-editorial {
+.page-team .team-hero-panel {
+    display: grid;
+    gap: 1rem;
+}
+
+.page-team .team-hero-panel h2 {
+    max-width: 11.5ch;
+}
+
+.page-team .team-overview {
     display: grid;
     grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
     gap: 1.25rem;
 }
 
-.page-team .team-manifesto,
-.page-team .team-presence,
-.page-team .team-role {
+.page-team .team-intro,
+.page-team .team-proof,
+.page-team .team-card {
     display: grid;
     gap: 1rem;
 }
 
-.page-team .team-manifesto {
+.page-team .team-intro {
     padding: 1.85rem;
 }
 
-.page-team .team-manifesto h2 {
-    max-width: 11ch;
+.page-team .team-intro h2 {
+    max-width: 12ch;
     font-size: clamp(2rem, 3vw, 3rem);
     line-height: 1.03;
 }
 
-.page-team .team-manifesto__lines {
+.page-team .team-intro__points {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
@@ -894,84 +914,327 @@
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.page-team .team-manifesto__lines article {
+.page-team .team-intro__points article {
     display: grid;
     gap: 0.35rem;
 }
 
-.page-team .team-manifesto__lines strong,
-.page-team .team-presence strong,
-.page-team .team-role h3 {
+.page-team .team-intro__points strong,
+.page-team .team-proof strong,
+.page-team .team-card__name {
     color: var(--text);
 }
 
-.page-team .team-presence {
+.page-team .team-proof {
     align-content: start;
     padding: 1.55rem;
 }
 
-.page-team .team-presence__list {
-    display: grid;
-    gap: 0.85rem;
+.page-team .team-proof > strong {
+    display: inline-flex;
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.2;
 }
 
-.page-team .team-presence__list li {
+.page-team .team-proof__list {
+    display: grid;
+    gap: 0.95rem;
+}
+
+.page-team .team-proof__item {
+    display: grid;
+    gap: 0.35rem;
+    padding-bottom: 0.95rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.page-team .team-proof__item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.page-team .team-proof__item p {
+    max-width: none;
+    font-size: 0.94rem;
+    line-height: 1.62;
+}
+
+.page-team .team-heading {
+    max-width: 42rem;
+}
+
+.page-team .team-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.page-team .team-card {
     position: relative;
-    padding-left: 1.2rem;
+    min-height: 100%;
+    padding: 1.55rem;
+    isolation: isolate;
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background-position var(--transition);
+}
+
+.page-team .team-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -12% -24% 46%;
+    height: 11rem;
+    pointer-events: none;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 68%);
+    opacity: 0.16;
+    filter: blur(14px);
+    transition: opacity var(--transition), transform var(--transition);
+}
+
+.page-team .team-card:hover,
+.page-team .team-card:focus-within {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 34px 100px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.page-team .team-card:hover::after,
+.page-team .team-card:focus-within::after {
+    opacity: 0.3;
+    transform: translate3d(-10px, -8px, 0);
+}
+
+.page-team .team-card--lead {
+    grid-column: span 7;
+    background:
+        radial-gradient(circle at 86% 6%, rgba(255, 255, 255, 0.12), transparent 30%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.034));
+}
+
+.page-team .team-card--performance {
+    grid-column: span 5;
+    background:
+        radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.1), transparent 26%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.078), rgba(255, 255, 255, 0.03));
+}
+
+.page-team .team-card--operations {
+    grid-column: span 5;
+    background:
+        radial-gradient(circle at 88% 10%, rgba(255, 255, 255, 0.08), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.072), rgba(255, 255, 255, 0.028));
+}
+
+.page-team .team-card--builder {
+    grid-column: span 7;
+    background:
+        radial-gradient(circle at 14% 8%, rgba(255, 255, 255, 0.12), transparent 30%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.094), rgba(255, 255, 255, 0.034));
+}
+
+.page-team .team-card__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-team .team-card__identity {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.page-team .team-card__avatar {
+    display: inline-flex;
+    width: 3.35rem;
+    height: 3.35rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 1.05rem;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05)),
+        rgba(255, 255, 255, 0.05);
+    box-shadow:
+        0 18px 36px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    color: var(--text);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    flex-shrink: 0;
+}
+
+.page-team .team-card__heading {
+    min-width: 0;
+}
+
+.page-team .team-card__role {
+    margin-bottom: 0.32rem;
+    color: var(--color-gray-300);
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+.page-team .team-card__name {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.45rem);
+    font-weight: 600;
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+}
+
+.page-team .team-card__index {
+    margin-left: auto;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.page-team .team-card__description,
+.page-team .team-card__details-list li {
+    max-width: none;
+}
+
+.page-team .team-card__description {
+    font-size: 0.98rem;
+    line-height: 1.68;
+}
+
+.page-team .team-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.page-team .team-card__tags li {
+    padding: 0.6rem 0.82rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.045);
+    color: var(--color-gray-200);
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+.page-team .team-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.page-team .team-card__details {
+    min-width: min(100%, 13.5rem);
+}
+
+.page-team .team-card__details[open] {
+    width: 100%;
+}
+
+.page-team .team-card__details summary,
+.page-team .team-card__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 2.9rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    font-size: 0.84rem;
+    font-weight: 700;
+    line-height: 1.2;
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.page-team .team-card__details summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.page-team .team-card__details summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-team .team-card__details summary::after {
+    content: "+";
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform var(--transition);
+}
+
+.page-team .team-card__details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.page-team .team-card__details summary:hover,
+.page-team .team-card__details summary:focus-visible,
+.page-team .team-card__link:hover,
+.page-team .team-card__link:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.26);
+}
+
+.page-team .team-card__details-body {
+    width: 100%;
+    margin-top: 0.95rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.page-team .team-card__details-list {
+    display: grid;
+    gap: 0.7rem;
+}
+
+.page-team .team-card__details-list li {
+    position: relative;
+    padding-left: 1.1rem;
     color: var(--text-soft);
+    font-size: 0.93rem;
     line-height: 1.6;
 }
 
-.page-team .team-presence__list li::before {
+.page-team .team-card__details-list li::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 0.72rem;
+    top: 0.7rem;
     width: 0.42rem;
     height: 0.42rem;
     border-radius: 999px;
     background: var(--color-gray-100);
-    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.05);
 }
 
-.page-team .team-role-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas:
-        "strategy design"
-        "strategy tech";
-    gap: 1rem;
-}
-
-.page-team .team-role {
-    padding: 1.55rem;
-}
-
-.page-team .team-role--strategy {
-    grid-area: strategy;
-}
-
-.page-team .team-role--design {
-    grid-area: design;
-}
-
-.page-team .team-role--tech {
-    grid-area: tech;
-}
-
-.page-team .team-role h3 {
-    max-width: 12ch;
-    font-size: 1.3rem;
-    line-height: 1.14;
-}
-
-.page-team .team-role__meta {
-    display: block;
-    padding-top: 0.95rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    color: var(--muted);
-    font-size: 0.88rem;
-    line-height: 1.55;
+.page-team .team-card__link::after {
+    content: "\2197";
+    font-size: 0.94rem;
+    line-height: 1;
 }
 
 .page-recommendations .recommendation-proof {
@@ -1308,7 +1571,7 @@
     }
 
     .page-about .about-editorial,
-    .page-team .team-editorial,
+    .page-team .team-overview,
     .page-recommendations .recommendation-proof,
     .page-contact .contact-journey,
     .page-contact .contact-conversion {
@@ -1316,7 +1579,7 @@
     }
 
     .page-about .about-positioning__points,
-    .page-team .team-manifesto__lines {
+    .page-team .team-intro__points {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -1343,10 +1606,15 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .page-team .team-role-grid {
-        grid-template-areas:
-            "strategy strategy"
-            "design tech";
+    .page-team .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .page-team .team-card--lead,
+    .page-team .team-card--performance,
+    .page-team .team-card--operations,
+    .page-team .team-card--builder {
+        grid-column: auto;
     }
 
     .page-about .cta-panel--page,
@@ -1546,6 +1814,11 @@
         line-height: 1.64;
     }
 
+    .page-team .hero-support {
+        font-size: 0.94rem;
+        line-height: 1.64;
+    }
+
     .page-panel {
         padding: 1.35rem;
         border-radius: 24px;
@@ -1566,9 +1839,9 @@
     .page-about .about-rhythm__item,
     .page-services .service-lead,
     .page-services .service-item,
-    .page-team .team-manifesto,
-    .page-team .team-presence,
-    .page-team .team-role,
+    .page-team .team-intro,
+    .page-team .team-proof,
+    .page-team .team-card,
     .page-recommendations .proof-letter,
     .page-recommendations .proof-sidebar,
     .page-recommendations .proof-echo,
@@ -1585,7 +1858,7 @@
     }
 
     .page-about .about-positioning h2,
-    .page-team .team-manifesto h2,
+    .page-team .team-intro h2,
     .page-recommendations .proof-letter h2,
     .page-contact .contact-journey__intro h2,
     .page-contact .contact-primary h2 {
@@ -1594,18 +1867,11 @@
     }
 
     .page-about .about-positioning__points,
-    .page-team .team-manifesto__lines,
+    .page-team .team-intro__points,
     .page-services .service-cluster,
     .page-contact .contact-journey__steps,
-    .page-team .team-role-grid {
+    .page-team .team-grid {
         grid-template-columns: 1fr;
-    }
-
-    .page-team .team-role-grid {
-        grid-template-areas:
-            "strategy"
-            "design"
-            "tech";
     }
 
     .page-about .about-principles__item {
@@ -1622,8 +1888,49 @@
         font-size: clamp(1.75rem, 8vw, 2.3rem);
     }
 
-    .page-team .team-role h3 {
-        font-size: 1.15rem;
+    .page-team .team-card__top {
+        flex-wrap: wrap;
+    }
+
+    .page-team .team-card__top,
+    .page-team .team-card__identity {
+        align-items: flex-start;
+    }
+
+    .page-team .team-card__avatar {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1rem;
+        font-size: 0.78rem;
+    }
+
+    .page-team .team-card__name {
+        font-size: clamp(1.6rem, 8vw, 2.1rem);
+    }
+
+    .page-team .team-card__tags {
+        gap: 0.5rem;
+    }
+
+    .page-team .team-card__tags li {
+        padding: 0.56rem 0.76rem;
+        font-size: 0.78rem;
+    }
+
+    .page-team .team-card__actions {
+        gap: 0.75rem;
+    }
+
+    .page-team .team-card__details,
+    .page-team .team-card__details[open],
+    .page-team .team-card__link {
+        width: 100%;
+    }
+
+    .page-team .team-card__details summary,
+    .page-team .team-card__link {
+        width: 100%;
+        justify-content: center;
     }
 
     .page-recommendations .proof-echoes {
