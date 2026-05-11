@@ -1396,8 +1396,7 @@
     text-transform: uppercase;
 }
 
-.page-contact .contact-primary__number,
-.page-contact .contact-direct__link {
+.page-contact .contact-primary__number {
     color: var(--text);
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -1409,15 +1408,46 @@
 }
 
 .page-contact .contact-primary__number:hover,
-.page-contact .contact-primary__number:focus-visible,
-.page-contact .contact-direct__link:hover,
-.page-contact .contact-direct__link:focus-visible {
+.page-contact .contact-primary__number:focus-visible {
     color: var(--text);
 }
 
 .page-contact .contact-brief {
     align-content: start;
     padding: 1.55rem;
+}
+
+.page-contact .contact-brief__intro {
+    display: grid;
+    gap: 0.6rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.page-contact .contact-brief__intro strong {
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+.page-contact .contact-brief__intro p {
+    max-width: none;
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    line-height: 1.68;
+}
+
+.page-contact .social-links--contact {
+    gap: 0.75rem;
+}
+
+.page-contact .social-links--contact .social-link--primary {
+    flex-basis: 100%;
+}
+
+.page-contact .contact-brief > strong {
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 .page-contact .contact-direct {
@@ -1434,13 +1464,6 @@
     background: rgba(255, 255, 255, 0.035);
 }
 
-.page-contact .contact-direct__item--primary {
-    border-color: rgba(255, 255, 255, 0.14);
-    background:
-        radial-gradient(circle at 88% 10%, rgba(255, 255, 255, 0.08), transparent 28%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.03));
-}
-
 .page-contact .contact-direct__item strong {
     color: var(--text);
     font-size: 0.96rem;
@@ -1450,18 +1473,19 @@
     color: var(--color-gray-200);
 }
 
-.page-contact .contact-direct__item a.contact-direct__link {
-    color: var(--text);
-}
-
-.page-contact .contact-direct__link {
-    font-size: 1.04rem;
-    line-height: 1.32;
-}
-
 .page-contact .contact-direct__item a:hover,
 .page-contact .contact-direct__item a:focus-visible {
     color: var(--text);
+}
+
+.social-links--footer {
+    padding-top: 0.15rem;
+}
+
+.social-links--footer .social-link {
+    min-height: 2.6rem;
+    padding-inline: 0.95rem;
+    font-size: 0.82rem;
 }
 
 .page-about .story-card p + p,
@@ -1997,6 +2021,10 @@
         grid-template-columns: 1fr;
     }
 
+    .page-contact .social-links--contact .social-link--primary {
+        flex-basis: auto;
+    }
+
     .page-about .cta-panel__conversion,
     .page-services .cta-panel__conversion,
     .page-team .cta-panel__conversion,
@@ -2018,5 +2046,15 @@
     .page-recommendations .letter-card {
         padding: 1.5rem;
         border-radius: 24px;
+    }
+
+    .page-contact .contact-brief__intro {
+        gap: 0.55rem;
+        padding-bottom: 0.9rem;
+    }
+
+    .page-contact .contact-brief__intro p {
+        font-size: 0.93rem;
+        line-height: 1.62;
     }
 }

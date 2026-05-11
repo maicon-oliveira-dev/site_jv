@@ -130,6 +130,69 @@
     background: rgba(255, 255, 255, 0.06);
 }
 
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.72rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.028)),
+        rgba(255, 255, 255, 0.025);
+    box-shadow:
+        0 16px 38px rgba(0, 0, 0, 0.26),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.86rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    text-decoration: none;
+    transition:
+        transform var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        background-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+    transform: translateY(-2px);
+    color: var(--text);
+    border-color: rgba(255, 255, 255, 0.2);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.04)),
+        rgba(255, 255, 255, 0.045);
+    box-shadow:
+        0 22px 55px rgba(0, 0, 0, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.social-link--primary {
+    border-color: rgba(255, 255, 255, 0.16);
+    background:
+        radial-gradient(circle at 85% 12%, rgba(255, 255, 255, 0.09), transparent 30%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.082), rgba(255, 255, 255, 0.036));
+}
+
+.social-link--primary:hover,
+.social-link--primary:focus-visible {
+    border-color: rgba(255, 255, 255, 0.24);
+    background:
+        radial-gradient(circle at 85% 12%, rgba(255, 255, 255, 0.12), transparent 30%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.046));
+}
+
 .section-heading {
     max-width: 46rem;
     margin-bottom: 2rem;
@@ -154,6 +217,20 @@
 
 .card-grid--two {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 640px) {
+    .social-links {
+        width: 100%;
+        gap: 0.55rem;
+    }
+
+    .social-link {
+        flex: 1 1 calc(50% - 0.55rem);
+        min-width: 0;
+        min-height: 2.875rem;
+        padding-inline: 0.95rem;
+    }
 }
 
 .feature-card,
