@@ -1,6 +1,6 @@
-# JV Agência
+# JV Digital
 
-Site institucional premium multi-page para a JV Agência, com direção visual escura, tipografia editorial e foco em presença digital de alto valor percebido.
+Site institucional premium multi-page para a JV Digital, com direção visual escura, tipografia editorial e foco em presença digital de alto valor percebido.
 
 ## Estrutura
 
