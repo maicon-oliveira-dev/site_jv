@@ -27,7 +27,7 @@
 
 .page-home .hero-actions--home {
     display: grid;
-    grid-template-columns: repeat(3, max-content);
+    grid-template-columns: repeat(2, max-content);
     align-items: center;
     gap: 0.85rem;
 }
@@ -1655,11 +1655,6 @@
         grid-template-columns: repeat(2, max-content);
     }
 
-    .page-home .hero-actions--home .btn--whatsapp {
-        grid-column: 1 / -1;
-        justify-self: start;
-    }
-
     .page-home .hero-panel--diagnostic {
         max-width: 40rem;
     }
@@ -1826,11 +1821,6 @@
 
     .page-home .hero-actions--home {
         grid-template-columns: 1fr;
-    }
-
-    .page-home .hero-actions--home .btn--whatsapp {
-        grid-column: auto;
-        justify-self: stretch;
     }
 
     .page-home .hero-actions--home .btn--desktop-only {

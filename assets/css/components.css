@@ -234,11 +234,29 @@
 }
 
 .form-status {
+    display: grid;
+    gap: 0.8rem;
     padding: 1rem 1.05rem;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 1rem;
     font-size: 0.94rem;
     line-height: 1.6;
+}
+
+.form-status__title {
+    color: inherit;
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+.form-status__text {
+    max-width: 36rem;
+    color: inherit;
+}
+
+.form-status__cta {
+    justify-self: start;
+    min-width: min(100%, 18rem);
 }
 
 .form-status--success {
