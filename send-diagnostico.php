@@ -118,7 +118,6 @@ $companyCnpjInput = clean_text($_POST['company_cnpj'] ?? '');
 $companyEmail = clean_text($_POST['company_email'] ?? '');
 $companyPhoneInput = clean_text($_POST['company_phone'] ?? '');
 $revenueBase = clean_text($_POST['revenue_base'] ?? '');
-$contactName = clean_text($_POST['contact_name'] ?? '');
 $honeypot = clean_text($_POST['company_site'] ?? '');
 
 if ($honeypot !== '') {
@@ -139,16 +138,14 @@ if (
     text_length($companyName) > 120 ||
     text_length($companyCnpjInput) > 18 ||
     text_length($companyEmail) > 160 ||
-    text_length($companyPhoneInput) > 20 ||
-    text_length($contactName) > 120
+    text_length($companyPhoneInput) > 20
 ) {
     redirect_with_status($errorRedirect);
 }
 
 if (
     has_header_injection($companyName) ||
-    has_header_injection($companyEmail) ||
-    has_header_injection($contactName)
+    has_header_injection($companyEmail)
 ) {
     redirect_with_status($errorRedirect);
 }
@@ -174,7 +171,6 @@ if (!array_key_exists($revenueBase, $revenueOptions)) {
     redirect_with_status($errorRedirect);
 }
 
-$resolvedContactName = $contactName !== '' ? $contactName : 'Nao informado';
 $ipAddress = $_SERVER['REMOTE_ADDR'] ?? '';
 $ipAddress = filter_var($ipAddress, FILTER_VALIDATE_IP) ? $ipAddress : 'Nao informado';
 
@@ -184,7 +180,6 @@ $messageLines = [
     '',
     'Nome da empresa: ' . $companyName,
     'CNPJ: ' . format_cnpj($companyCnpj),
-    'Nome do responsavel: ' . $resolvedContactName,
     'E-mail: ' . $validatedEmail,
     'Telefone: ' . $companyPhoneInput,
     'Faturamento base: ' . $revenueOptions[$revenueBase],
