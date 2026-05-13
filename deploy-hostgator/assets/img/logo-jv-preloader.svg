@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1350 1165" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">JV Digital - logo preloader</title>
+  <desc id="logoDesc">Logo JV branca sobre fundo preto com animação premium de entrada, brilho e profundidade.</desc>
+
+  <style>
+    :root {
+      --bg: #000000;
+      --white: #ffffff;
+      --silver: #dfe2e6;
+      --shadow: rgba(255, 255, 255, 0.26);
+    }
+
+    svg {
+      overflow: visible;
+    }
+
+    .ambient-glow {
+      opacity: .48;
+      transform-origin: 50% 50%;
+      animation: ambientIn 900ms cubic-bezier(.16, 1, .3, 1) 260ms both,
+                 ambientPulse 2600ms ease-in-out 1200ms infinite;
+    }
+
+    .logo-mark {
+      transform-origin: 50% 50%;
+      animation: markEntrance 1150ms cubic-bezier(.16, 1, .3, 1) forwards,
+                 markBreath 2900ms ease-in-out 1250ms infinite;
+    }
+
+    .logo-piece {
+      fill: url(#faceGradient);
+      fill-opacity: 1;
+      stroke: rgba(255, 255, 255, .7);
+      stroke-width: 2.2;
+      stroke-linejoin: bevel;
+      stroke-linecap: square;
+      filter: url(#premiumDepth);
+      shape-rendering: geometricPrecision;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pieceReveal 980ms cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .piece-right {
+      animation-delay: 110ms;
+    }
+
+    .edge-line {
+      fill: none;
+      stroke: rgba(255, 255, 255, .34);
+      stroke-width: 1.8;
+      stroke-linejoin: bevel;
+      opacity: .42;
+      filter: url(#microGlow);
+      animation: edgeGlow 1800ms ease-in-out 1200ms infinite alternate;
+    }
+
+    .logo-shine {
+      opacity: 0;
+      transform: translateX(-740px) rotate(-18deg);
+      transform-origin: 50% 50%;
+      animation: shineSweep 2600ms cubic-bezier(.16, 1, .3, 1) 1200ms infinite;
+    }
+
+    @keyframes markEntrance {
+      0% { opacity: 0; transform: translateY(26px) scale(.955); filter: blur(7px); }
+      55% { opacity: 1; filter: blur(0); }
+      100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+
+    @keyframes markBreath {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-6px) scale(1.006); }
+    }
+
+    @keyframes pieceReveal {
+      0% {
+        opacity: 0;
+        fill-opacity: 0;
+        transform: translateY(18px) scale(.985);
+        filter: blur(4px) url(#premiumDepth);
+      }
+      60% {
+        opacity: 1;
+        fill-opacity: .76;
+      }
+      100% {
+        opacity: 1;
+        fill-opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0) url(#premiumDepth);
+      }
+    }
+
+    @keyframes edgeGlow {
+      from { opacity: .22; }
+      to { opacity: .58; }
+    }
+
+    @keyframes edgeFade {
+      from { opacity: .48; }
+      to { opacity: .9; }
+    }
+
+    @keyframes shineSweep {
+      0% { opacity: 0; transform: translateX(-780px) rotate(-18deg); }
+      18% { opacity: .82; }
+      46% { opacity: .38; }
+      72%, 100% { opacity: 0; transform: translateX(780px) rotate(-18deg); }
+    }
+
+    @keyframes ambientIn {
+      to { opacity: .9; }
+    }
+
+    @keyframes ambientPulse {
+      0%, 100% { opacity: .34; transform: scale(.98); }
+      50% { opacity: .62; transform: scale(1.035); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ambient-glow,
+      .logo-mark,
+      .logo-piece,
+      .edge-line,
+      .logo-shine {
+        animation: none !important;
+      }
+
+      .ambient-glow,
+      .logo-piece,
+      .edge-line {
+        opacity: 1;
+        fill-opacity: 1;
+      }
+    }
+  </style>
+
+  <defs>
+    <radialGradient id="backgroundGlow" cx="50%" cy="48%" r="52%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16" />
+      <stop offset="38%" stop-color="#ffffff" stop-opacity="0.055" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="faceGradient" x1="235" y1="95" x2="1050" y2="1110" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="38%" stop-color="#ffffff" />
+      <stop offset="66%" stop-color="#f2f3f5" />
+      <stop offset="100%" stop-color="#d9dde2" />
+    </linearGradient>
+
+    <linearGradient id="shineGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="42%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="58%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="premiumDepth" x="-12%" y="-12%" width="124%" height="124%">
+      <feDropShadow dx="10" dy="14" stdDeviation="6" flood-color="#000000" flood-opacity="0.78" />
+      <feDropShadow dx="-3" dy="-3" stdDeviation="1.8" flood-color="#ffffff" flood-opacity="0.28" />
+      <feDropShadow dx="0" dy="0" stdDeviation="2.8" flood-color="#ffffff" flood-opacity="0.12" />
+    </filter>
+
+    <filter id="microGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#ffffff" flood-opacity="0.28" />
+    </filter>
+
+    <mask id="logoMask" maskUnits="userSpaceOnUse">
+      <rect width="1350" height="1165" fill="black" />
+      <path fill="white" d="M34 33 L116 180 L191 181 L179 152 L433 162 L741 702 L655 860 L526 633 L584 639 L509 503 L314 503 L657 1112 L886 700 L516 36 Z" />
+      <path fill="white" d="M583 35 L619 98 L645 96 L938 625 L1229 96 L1252 97 L1286 36 L1129 34 L941 367 L754 35 Z" />
+    </mask>
+  </defs>
+
+  <ellipse class="ambient-glow" cx="675" cy="560" rx="590" ry="490" fill="url(#backgroundGlow)" />
+
+  <g class="logo-mark">
+    <path class="logo-piece piece-left" pathLength="100" d="M34 33 L116 180 L191 181 L179 152 L433 162 L741 702 L655 860 L526 633 L584 639 L509 503 L314 503 L657 1112 L886 700 L516 36 Z" />
+    <path class="logo-piece piece-right" pathLength="100" d="M583 35 L619 98 L645 96 L938 625 L1229 96 L1252 97 L1286 36 L1129 34 L941 367 L754 35 Z" />
+
+    <path class="edge-line" pathLength="100" d="M34 33 L116 180 L191 181 L179 152 L433 162 L741 702 L655 860 L526 633 L584 639 L509 503 L314 503 L657 1112 L886 700 L516 36 Z" />
+    <path class="edge-line" pathLength="100" d="M583 35 L619 98 L645 96 L938 625 L1229 96 L1252 97 L1286 36 L1129 34 L941 367 L754 35 Z" />
+
+    <g mask="url(#logoMask)">
+      <rect class="logo-shine" x="-140" y="-110" width="410" height="1450" fill="url(#shineGradient)" />
+    </g>
+  </g>
+</svg>

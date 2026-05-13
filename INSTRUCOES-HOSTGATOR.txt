@@ -1,0 +1,16 @@
+1. Acesse o cPanel da HostGator.
+2. Abra o Gerenciador de Arquivos.
+3. Entre na pasta public_html do domínio correto.
+4. Envie o arquivo jv-digital-hostgator.zip.
+5. Extraia o ZIP dentro de public_html.
+6. Confirme que index.html ficou diretamente dentro de public_html.
+7. Confirme que send-diagnostico.php ficou diretamente dentro de public_html.
+8. Confirme que a pasta assets ficou diretamente dentro de public_html.
+9. Antes de testar o formulário, edite send-diagnostico.php e substitua:
+   comercial@seudominio.com.br
+   site@seudominio.com.br
+   pelos e-mails reais criados na HostGator.
+10. Teste o site no domínio.
+11. Teste o formulário em contato.html#diagnostico.
+12. Se o e-mail não chegar, verificar caixa de spam, DKIM/SPF e configuração de e-mail no cPanel.
+13. Se aparecer site antigo, limpar cache do navegador ou verificar se existe outro index.html/index.php antigo.

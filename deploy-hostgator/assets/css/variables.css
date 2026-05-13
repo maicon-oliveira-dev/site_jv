@@ -1,0 +1,65 @@
+/* Variables */
+:root {
+    color-scheme: dark;
+    --font-body: "Manrope", "Segoe UI", sans-serif;
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --color-bg: #030303;
+    --color-bg-soft: #080808;
+    --color-bg-elevated: #101010;
+    --color-surface: rgba(255, 255, 255, 0.045);
+    --color-surface-strong: rgba(255, 255, 255, 0.075);
+    --color-white: #ffffff;
+    --color-text: #f5f5f5;
+    --color-text-soft: rgba(255, 255, 255, 0.78);
+    --color-muted: rgba(255, 255, 255, 0.58);
+    --color-gray-100: #f4f4f5;
+    --color-gray-200: #e4e4e7;
+    --color-gray-300: #d4d4d8;
+    --color-gray-400: #a1a1aa;
+    --color-gray-500: #71717a;
+    --color-gray-700: #3f3f46;
+    --color-gray-800: #27272a;
+    --color-gray-900: #18181b;
+    --color-border: rgba(255, 255, 255, 0.10);
+    --color-border-strong: rgba(255, 255, 255, 0.18);
+    --color-primary: #ffffff;
+    --color-primary-soft: rgba(255, 255, 255, 0.12);
+    --color-accent: #d9d9d9;
+    --bg: var(--color-bg);
+    --bg-deep: var(--color-bg-soft);
+    --bg-panel: rgba(255, 255, 255, 0.045);
+    --bg-panel-strong: rgba(255, 255, 255, 0.075);
+    --bg-soft: rgba(255, 255, 255, 0.035);
+    --surface: var(--color-surface);
+    --surface-strong: var(--color-surface-strong);
+    --border: var(--color-border);
+    --border-strong: var(--color-border-strong);
+    --text: var(--color-text);
+    --text-soft: var(--color-text-soft);
+    --muted: var(--color-muted);
+    --accent: var(--color-accent);
+    --accent-strong: var(--color-primary);
+    --accent-deep: var(--color-gray-500);
+    --accent-rgb: 217, 217, 217;
+    --panel-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.03));
+    --panel-gradient-soft: linear-gradient(180deg, rgba(255, 255, 255, 0.058), rgba(255, 255, 255, 0.02));
+    --panel-gradient-strong: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
+    --shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.38);
+    --shadow-premium: 0 30px 90px rgba(0, 0, 0, 0.55);
+    --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    --shadow: var(--shadow-premium);
+    --radius-lg: 32px;
+    --radius-md: 24px;
+    --radius-sm: 18px;
+    --radius-xs: 12px;
+    --max-width: 1180px;
+    --section-gap: clamp(4rem, 8vw, 7rem);
+    --transition: 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        scroll-behavior: auto;
+        --transition: 120ms ease;
+    }
+}
