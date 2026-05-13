@@ -2,7 +2,16 @@ document.documentElement.classList.add("motion-ready");
 
 const body = document.body;
 const preloader = document.getElementById("jv-preloader");
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const normalizePath = (path) => {
+    const normalizedPath = path
+        .replace(/index\.html$/i, "")
+        .replace(/\.html$/i, "")
+        .replace(/\/+$/, "");
+
+    return normalizedPath === "" ? "/" : normalizedPath;
+};
+
+const currentPage = normalizePath(window.location.pathname);
 
 if (preloader && body) {
     body.classList.add("is-loading");
@@ -10,7 +19,15 @@ if (preloader && body) {
 }
 
 document.querySelectorAll(".main-nav a").forEach((link) => {
-    if (link.getAttribute("href") === currentPage) {
+    const href = link.getAttribute("href");
+
+    if (!href) {
+        return;
+    }
+
+    const linkUrl = new URL(href, window.location.origin);
+
+    if (normalizePath(linkUrl.pathname) === currentPage) {
         link.setAttribute("aria-current", "page");
     }
 });
