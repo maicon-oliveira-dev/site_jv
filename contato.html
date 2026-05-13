@@ -59,7 +59,7 @@
                     <a href="carta-recomendacao.html">Recomenda&ccedil;&otilde;es</a>
                     <a href="contato.html" aria-current="page">Contato</a>
                 </nav>
-                <a href="https://wa.me/5547997699364?text=Ol%C3%A1%2C%20JV%20Digital%21%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20para%20minha%20marca." class="header-cta" target="_blank" rel="noopener noreferrer" aria-label="Chamar a JV Digital no WhatsApp para solicitar diagn&oacute;stico">Solicitar diagn&oacute;stico</a>
+                <a href="#diagnostico" class="header-cta" aria-label="Ir para o formul&aacute;rio de diagn&oacute;stico da JV Digital">Solicitar diagn&oacute;stico</a>
             </div>
         </div>
     </header>
@@ -128,27 +128,163 @@
             </div>
         </section>
 
+        <section class="section section-contact-diagnostic" id="diagnostico" aria-labelledby="diagnostico-title">
+            <div class="container">
+                <div class="contact-diagnostic">
+                    <article class="surface-card surface-card--strong diagnostic-form-card" data-reveal data-spotlight>
+                        <div class="diagnostic-form-card__header">
+                            <span class="section-tag">Diagn&oacute;stico premium</span>
+                            <h2 id="diagnostico-title">Solicite um diagn&oacute;stico para sua marca.</h2>
+                            <p>Preencha os dados principais e a JV Digital analisar&aacute; o melhor caminho para melhorar sua presen&ccedil;a digital, autoridade e gera&ccedil;&atilde;o de demanda.</p>
+                            <p class="form-note" id="diagnostico-form-help">As informa&ccedil;&otilde;es ajudam a entender o momento da empresa e indicar uma dire&ccedil;&atilde;o mais assertiva.</p>
+                        </div>
+
+                        <div class="form-status" id="diagnosticoStatus" data-form-status aria-live="polite" hidden></div>
+
+                        <form class="diagnostic-form" method="POST" action="./send-diagnostico.php" autocomplete="on" aria-describedby="diagnostico-form-help">
+                            <div class="form-grid">
+                                <div class="form-field form-field--full">
+                                    <label class="form-label" for="company_name">Nome da empresa <span aria-hidden="true">*</span></label>
+                                    <input
+                                        class="form-control"
+                                        id="company_name"
+                                        name="company_name"
+                                        type="text"
+                                        maxlength="120"
+                                        placeholder="Ex.: Nome da sua empresa"
+                                        autocomplete="organization"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="company_cnpj">CNPJ <span aria-hidden="true">*</span></label>
+                                    <input
+                                        class="form-control"
+                                        id="company_cnpj"
+                                        name="company_cnpj"
+                                        type="text"
+                                        inputmode="numeric"
+                                        maxlength="18"
+                                        placeholder="00.000.000/0000-00"
+                                        autocomplete="off"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="company_email">E-mail <span aria-hidden="true">*</span></label>
+                                    <input
+                                        class="form-control"
+                                        id="company_email"
+                                        name="company_email"
+                                        type="email"
+                                        maxlength="160"
+                                        placeholder="voce@empresa.com.br"
+                                        autocomplete="email"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="company_phone">N&uacute;mero de telefone <span aria-hidden="true">*</span></label>
+                                    <input
+                                        class="form-control"
+                                        id="company_phone"
+                                        name="company_phone"
+                                        type="tel"
+                                        inputmode="tel"
+                                        maxlength="20"
+                                        placeholder="(00) 00000-0000"
+                                        autocomplete="tel"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="form-label" for="revenue_base">Faturamento base <span aria-hidden="true">*</span></label>
+                                    <select
+                                        class="form-control form-control--select"
+                                        id="revenue_base"
+                                        name="revenue_base"
+                                        aria-describedby="diagnostico-form-help"
+                                        required
+                                    >
+                                        <option value="" selected disabled>Selecione a faixa principal da empresa</option>
+                                        <option value="ate_20_mil_mes">At&eacute; R$ 20 mil/m&ecirc;s</option>
+                                        <option value="20_a_50_mil_mes">De R$ 20 mil a R$ 50 mil/m&ecirc;s</option>
+                                        <option value="50_a_100_mil_mes">De R$ 50 mil a R$ 100 mil/m&ecirc;s</option>
+                                        <option value="100_a_300_mil_mes">De R$ 100 mil a R$ 300 mil/m&ecirc;s</option>
+                                        <option value="acima_300_mil_mes">Acima de R$ 300 mil/m&ecirc;s</option>
+                                        <option value="informar_na_conversa">Prefiro informar na conversa</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-field form-field--full">
+                                    <label class="form-label" for="contact_name">Nome do respons&aacute;vel</label>
+                                    <input
+                                        class="form-control"
+                                        id="contact_name"
+                                        name="contact_name"
+                                        type="text"
+                                        maxlength="120"
+                                        placeholder="Ex.: Nome do respons&aacute;vel"
+                                        autocomplete="name"
+                                    >
+                                </div>
+
+                                <div class="form-honeypot" aria-hidden="true">
+                                    <label class="form-label" for="company_site">Website</label>
+                                    <input
+                                        class="form-control"
+                                        id="company_site"
+                                        name="company_site"
+                                        type="text"
+                                        maxlength="120"
+                                        tabindex="-1"
+                                        autocomplete="off"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="diagnostic-form__footer">
+                                <button class="btn btn-primary" type="submit">Enviar diagn&oacute;stico</button>
+                            </div>
+                        </form>
+                    </article>
+
+                    <aside class="surface-card diagnostic-support" data-reveal>
+                        <span class="section-tag">Contato direto</span>
+                        <h2>Prefere falar direto?</h2>
+                        <p>Se quiser uma conversa mais r&aacute;pida, fale com um especialista pelo WhatsApp.</p>
+                        <a href="https://wa.me/5547997699364?text=Ol%C3%A1%2C%20JV%20Digital%21%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20para%20minha%20marca." class="btn btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="Falar com especialista da JV Digital no WhatsApp">Falar com especialista</a>
+                        <p class="small-note diagnostic-support__note">Canal alternativo para alinhar contexto, urg&ecirc;ncia e o melhor pr&oacute;ximo passo da sua empresa.</p>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
         <section class="section section-contact-conversion">
             <div class="container">
                 <div class="contact-conversion">
                     <article class="surface-card surface-card--strong contact-primary" data-reveal data-spotlight>
-                        <span class="section-tag">Canal principal</span>
-                        <h2>Chamar no WhatsApp &eacute; o caminho mais r&aacute;pido para come&ccedil;ar.</h2>
-                        <p>Com uma mensagem curta e o contexto certo, a JV j&aacute; consegue indicar o melhor caminho para sua empresa.</p>
+                        <span class="section-tag">Contato r&aacute;pido</span>
+                        <h2>Se preferir acelerar a conversa, fale com um especialista no WhatsApp.</h2>
+                        <p>O formul&aacute;rio organiza o diagn&oacute;stico. Se voc&ecirc; quiser resolver em uma troca mais imediata, a JV tamb&eacute;m atende por WhatsApp.</p>
                         <div class="contact-primary__channel">
                             <span class="contact-primary__label">WhatsApp</span>
                             <a class="contact-primary__number" href="https://wa.me/5547997699364?text=Ol%C3%A1%2C%20JV%20Digital%21%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20para%20minha%20marca." target="_blank" rel="noopener noreferrer" aria-label="Chamar a JV Digital no WhatsApp pelo n&uacute;mero 47 99769-9364">(47) 99769-9364</a>
                         </div>
                         <div class="hero-actions">
-                            <a href="https://wa.me/5547997699364?text=Ol%C3%A1%2C%20JV%20Digital%21%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20para%20minha%20marca." class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Chamar a JV Digital no WhatsApp">Chamar no WhatsApp</a>
-                            <a href="mailto:contato@jvagencia.com.br?subject=Briefing%20JV%20Digital" class="btn btn-secondary">Enviar mensagem</a>
+                            <a href="https://wa.me/5547997699364?text=Ol%C3%A1%2C%20JV%20Digital%21%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20para%20minha%20marca." class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Falar com especialista da JV Digital no WhatsApp">Falar com especialista</a>
+                            <a href="#diagnostico" class="btn btn-secondary">Voltar ao formul&aacute;rio</a>
                         </div>
                     </article>
 
                     <aside class="surface-card contact-brief" data-reveal>
                         <div class="contact-brief__intro">
-                            <strong>Escolha o melhor canal para falar com a JV Digital.</strong>
-                            <p>Para diagn&oacute;stico e projetos, o WhatsApp &eacute; o caminho mais r&aacute;pido. Voc&ecirc; tamb&eacute;m pode acompanhar nossos conte&uacute;dos e atualiza&ccedil;&otilde;es nas redes sociais.</p>
+                            <strong>O formul&aacute;rio &eacute; o caminho principal. Os canais abaixo seguem abertos como apoio.</strong>
+                            <p>Se preferir acompanhar a JV ou abrir uma conversa por outro ponto de contato, WhatsApp, Instagram e Facebook continuam dispon&iacute;veis.</p>
                         </div>
                         <div class="social-links social-links--contact" aria-label="Canais de contato e redes sociais da JV Digital">
                             <a class="social-link social-link--primary" href="https://wa.me/5547997699364?text=Ol%C3%A1%2C%20JV%20Digital%21%20Gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20para%20minha%20marca." target="_blank" rel="noopener noreferrer" aria-label="Chamar a JV Digital no WhatsApp">WhatsApp</a>

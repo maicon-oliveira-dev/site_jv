@@ -62,3 +62,37 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
 
     fallbackTimer = window.setTimeout(finishPreloader, reducedMotionQuery.matches ? 2500 : 3000);
 })();
+
+(() => {
+    const statusHost = document.querySelector("[data-form-status]");
+
+    if (!statusHost) {
+        return;
+    }
+
+    const url = new URL(window.location.href);
+    const status = url.searchParams.get("status");
+    const messages = {
+        success: "Diagn&oacute;stico enviado com sucesso. A JV Digital entrar&aacute; em contato em breve.",
+        error: "N&atilde;o foi poss&iacute;vel enviar agora. Tente novamente ou fale conosco pelo WhatsApp."
+    };
+
+    if (!status || !messages[status]) {
+        return;
+    }
+
+    statusHost.innerHTML = messages[status];
+    statusHost.hidden = false;
+    statusHost.classList.add(status === "success" ? "form-status--success" : "form-status--error");
+    statusHost.setAttribute("role", status === "success" ? "status" : "alert");
+    statusHost.setAttribute("tabindex", "-1");
+    statusHost.focus();
+
+    url.searchParams.delete("status");
+
+    if (window.history.replaceState) {
+        const cleanSearch = url.searchParams.toString();
+        const cleanUrl = `${url.pathname}${cleanSearch ? `?${cleanSearch}` : ""}${url.hash}`;
+        window.history.replaceState({}, document.title, cleanUrl);
+    }
+})();

@@ -16,13 +16,24 @@
 
 .page-home .page-hero h1 {
     max-width: 9.4ch;
-    font-size: clamp(2.7rem, 6.2vw, 3.15rem);
+    font-size: clamp(2.7rem, 6.2vw, 3.05rem);
 }
 
 .page-home .page-hero .lead {
     max-width: 32rem;
     font-size: 1.02rem;
     line-height: 1.72;
+}
+
+.page-home .hero-actions--home {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.page-home .hero-actions--home .btn {
+    min-width: 0;
 }
 
 .page-home .hero-strip {
@@ -1369,6 +1380,64 @@
     line-height: 1.2;
 }
 
+.page-contact #diagnostico {
+    scroll-margin-top: clamp(6.4rem, 9vw, 8.6rem);
+}
+
+.page-contact .contact-diagnostic {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.page-contact .diagnostic-form-card,
+.page-contact .diagnostic-form-card__header,
+.page-contact .diagnostic-form,
+.page-contact .diagnostic-form__footer,
+.page-contact .diagnostic-support {
+    display: grid;
+    gap: 1rem;
+}
+
+.page-contact .diagnostic-form-card {
+    padding: 1.85rem;
+}
+
+.page-contact .diagnostic-form-card__header {
+    gap: 0.8rem;
+}
+
+.page-contact .diagnostic-form-card h2,
+.page-contact .diagnostic-support h2 {
+    max-width: 12ch;
+    font-size: clamp(2rem, 3vw, 2.9rem);
+    line-height: 1.03;
+}
+
+.page-contact .diagnostic-form-card__header p {
+    max-width: 42rem;
+}
+
+.page-contact .diagnostic-form__footer {
+    padding-top: 0.35rem;
+}
+
+.page-contact .diagnostic-form__footer .btn,
+.page-contact .diagnostic-support .btn {
+    min-width: min(100%, 18rem);
+}
+
+.page-contact .diagnostic-support {
+    align-content: start;
+    padding: 1.55rem;
+}
+
+.page-contact .diagnostic-support__note {
+    padding-top: 0.3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .page-contact .contact-conversion {
     display: grid;
     grid-template-columns: minmax(0, 1.04fr) minmax(280px, 0.96fr);
@@ -1582,6 +1651,15 @@
         grid-template-columns: 1fr;
     }
 
+    .page-home .hero-actions--home {
+        grid-template-columns: repeat(2, max-content);
+    }
+
+    .page-home .hero-actions--home .btn--whatsapp {
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+
     .page-home .hero-panel--diagnostic {
         max-width: 40rem;
     }
@@ -1649,6 +1727,7 @@
     .page-about .about-editorial,
     .page-team .team-overview,
     .page-recommendations .recommendation-proof,
+    .page-contact .contact-diagnostic,
     .page-contact .contact-journey,
     .page-contact .contact-conversion {
         grid-template-columns: 1fr;
@@ -1743,6 +1822,19 @@
 
     .page-home .hero-panel__check {
         padding: 0.95rem;
+    }
+
+    .page-home .hero-actions--home {
+        grid-template-columns: 1fr;
+    }
+
+    .page-home .hero-actions--home .btn--whatsapp {
+        grid-column: auto;
+        justify-self: stretch;
+    }
+
+    .page-home .hero-actions--home .btn--desktop-only {
+        display: none;
     }
 
     .page-home .section-solutions .section-heading {
@@ -1921,6 +2013,8 @@
     .page-recommendations .proof-letter,
     .page-recommendations .proof-sidebar,
     .page-recommendations .proof-echo,
+    .page-contact .diagnostic-form-card,
+    .page-contact .diagnostic-support,
     .page-contact .contact-journey__intro,
     .page-contact .contact-step,
     .page-contact .contact-primary,
@@ -1936,6 +2030,8 @@
     .page-about .about-positioning h2,
     .page-team .team-intro h2,
     .page-recommendations .proof-letter h2,
+    .page-contact .diagnostic-form-card h2,
+    .page-contact .diagnostic-support h2,
     .page-contact .contact-journey__intro h2,
     .page-contact .contact-primary h2 {
         max-width: 11ch;
@@ -2019,6 +2115,10 @@
 
     .page-contact .hero-actions {
         grid-template-columns: 1fr;
+    }
+
+    .page-contact #diagnostico {
+        scroll-margin-top: 6.15rem;
     }
 
     .page-contact .social-links--contact .social-link--primary {
