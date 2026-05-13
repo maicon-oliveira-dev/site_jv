@@ -6,11 +6,11 @@ date_default_timezone_set('America/Sao_Paulo');
 $successRedirect = './contato.html?status=success#diagnostico';
 $errorRedirect = './contato.html?status=error#diagnostico';
 
-// TODO: substituir pelo e-mail real da JV Digital na HostGator antes de publicar.
-$to = 'comercial@seudominio.com.br';
+// Endereco de destino configurado na HostGator para receber os diagnosticos do site.
+$to = 'comercial@agenciajv.com';
 
-// TODO: substituir pelo remetente real do dominio da JV Digital antes de publicar.
-$from = 'site@seudominio.com.br';
+// Remetente tecnico usado pelo formulario para envio pelo dominio da HostGator.
+$from = 'site@agenciajv.com';
 
 $revenueOptions = [
     'ate_20_mil_mes' => 'Ate R$ 20 mil/mes',
