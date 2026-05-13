@@ -1,9 +1,0 @@
-1. Acesse o cPanel da HostGator.
-2. Abra o Gerenciador de Arquivos.
-3. Entre na pasta public_html do domínio correto.
-4. Envie o arquivo jv-digital-hostgator.zip.
-5. Extraia o ZIP dentro de public_html.
-6. Confirme que index.html ficou diretamente dentro de public_html.
-7. Confirme que a pasta assets ficou diretamente dentro de public_html.
-8. Acesse o domínio e teste o site.
-9. Se aparecer uma página antiga, limpar cache do navegador ou verificar se existe outro index.html ou index.php antigo.

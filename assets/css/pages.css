@@ -16,7 +16,7 @@
 
 .page-home .page-hero h1 {
     max-width: 9.4ch;
-    font-size: clamp(2.7rem, 6.2vw, 5.45rem);
+    font-size: clamp(2.7rem, 6.2vw, 3.15rem);
 }
 
 .page-home .page-hero .lead {
