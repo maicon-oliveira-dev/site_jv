@@ -190,7 +190,7 @@
     font-family: var(--font-display);
     font-size: clamp(2rem, 3.2vw, 2.95rem);
     line-height: 1.02;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
 }
 
 .page-home .feature-card--primary p {
@@ -347,7 +347,7 @@
     font-family: var(--font-display);
     font-size: clamp(1.85rem, 2.8vw, 2.5rem);
     line-height: 1.02;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
 }
 
 .page-home .shift-list {
@@ -1102,7 +1102,7 @@
     font-size: clamp(1.8rem, 3vw, 2.45rem);
     font-weight: 600;
     line-height: 0.96;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
 }
 
 .page-team .team-card__index {
@@ -1468,7 +1468,7 @@
 .page-contact .contact-primary__number {
     color: var(--text);
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
 }
 
 .page-contact .contact-primary__number {
@@ -1889,7 +1889,7 @@
     .page-home .shift-card,
     .page-home .shift-aside {
         padding: 1.35rem;
-        border-radius: 24px;
+        border-radius: var(--radius-lg);
     }
 
     .page-home .shift-card h3 {
@@ -1924,7 +1924,7 @@
 
     .page-home .timeline-step {
         padding: 1.2rem 1.2rem 1.2rem 2.7rem;
-        border-radius: 24px;
+        border-radius: var(--radius-lg);
     }
 
     .page-home .timeline-step::before {
@@ -1979,7 +1979,7 @@
 
     .page-panel {
         padding: 1.35rem;
-        border-radius: 24px;
+        border-radius: var(--radius-lg);
     }
 
     .page-panel h2 {
@@ -2014,7 +2014,7 @@
     .page-team .cta-panel--page,
     .page-recommendations .cta-panel--page {
         padding: 1.4rem;
-        border-radius: 24px;
+        border-radius: var(--radius-lg);
     }
 
     .page-about .about-positioning h2,
@@ -2135,7 +2135,7 @@
 
     .page-recommendations .letter-card {
         padding: 1.5rem;
-        border-radius: 24px;
+        border-radius: var(--radius-lg);
     }
 
     .page-contact .contact-brief__intro {
@@ -2146,5 +2146,1019 @@
     .page-contact .contact-brief__intro p {
         font-size: 0.93rem;
         line-height: 1.62;
+    }
+}
+
+/* Visual assets and stronger section contrast. */
+.page-home .hero-preview {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(9rem, 0.65fr);
+    gap: 0.8rem;
+    max-width: min(100%, 42rem);
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.45rem;
+    background:
+        radial-gradient(circle at 85% 12%, rgba(255, 255, 255, 0.08), transparent 34%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.058), rgba(255, 255, 255, 0.024));
+    box-shadow: var(--shadow-soft), var(--shadow-inset);
+}
+
+.page-home .hero-preview__screen,
+.page-home .hero-preview__panel,
+.page-home .conversion-map {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: rgba(255, 255, 255, 0.045);
+    box-shadow: var(--shadow-inset);
+}
+
+.page-home .hero-preview__screen {
+    display: grid;
+    gap: 0.7rem;
+    min-height: 9rem;
+    padding: 0.85rem;
+    border-radius: 1rem;
+}
+
+.page-home .hero-preview__bar {
+    display: flex;
+    gap: 0.32rem;
+}
+
+.page-home .hero-preview__bar span {
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.42);
+}
+
+.page-home .hero-preview__content {
+    display: grid;
+    align-content: center;
+    gap: 0.35rem;
+    min-height: 3.4rem;
+}
+
+.page-home .hero-preview__content strong {
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+    line-height: 1;
+}
+
+.page-home .hero-preview__content span,
+.page-home .hero-preview__panel span {
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+
+.page-home .hero-preview__tracks {
+    display: grid;
+    grid-template-columns: 1.2fr 0.85fr 0.65fr;
+    gap: 0.45rem;
+    align-items: end;
+}
+
+.page-home .hero-preview__tracks span {
+    height: 2.2rem;
+    border-radius: 0.7rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.035));
+}
+
+.page-home .hero-preview__tracks span:nth-child(2) {
+    height: 3.1rem;
+}
+
+.page-home .hero-preview__tracks span:nth-child(3) {
+    height: 1.65rem;
+}
+
+.page-home .hero-preview__panel {
+    display: grid;
+    align-content: space-between;
+    min-height: 9rem;
+    padding: 0.85rem;
+    border-radius: 1rem;
+}
+
+.page-home .hero-preview__panel strong {
+    color: var(--text);
+    font-size: 0.98rem;
+    line-height: 1.22;
+}
+
+.page-home .hero-preview__panel i {
+    display: block;
+    width: 100%;
+    height: 0.55rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.12));
+}
+
+.page-home .conversion-map {
+    display: grid;
+    grid-template-columns: auto minmax(1.5rem, 1fr) auto minmax(1.5rem, 1fr) auto;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    margin-top: 0.2rem;
+    padding: 0.85rem;
+    border-radius: 1rem;
+}
+
+.page-home .conversion-map__node {
+    display: inline-flex;
+    justify-content: center;
+    padding: 0.55rem 0.72rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    color: var(--text-soft);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 0.76rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.page-home .conversion-map__node--active {
+    color: #050505;
+    background: linear-gradient(180deg, #ffffff, #d8d8d8);
+}
+
+.page-home .conversion-map__line {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.08));
+}
+
+.page-home .feature-card--primary,
+.page-home .shift-card--after,
+.page-contact .diagnostic-form-card {
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.page-home .feature-card--positioning {
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.028)),
+        var(--panel-gradient);
+}
+
+.page-home .feature-card--traffic {
+    background:
+        radial-gradient(circle at 8% 18%, rgba(255, 255, 255, 0.1), transparent 32%),
+        var(--panel-gradient);
+}
+
+.page-home .feature-card--design,
+.page-home .feature-card--technology,
+.page-home .feature-card--metrics {
+    border-style: solid;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.052), rgba(255, 255, 255, 0.018)),
+        rgba(255, 255, 255, 0.018);
+}
+
+.page-contact .diagnostic-form__footer {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+}
+
+.page-contact .diagnostic-form__hint {
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.35;
+}
+
+@media (max-width: 720px) {
+    .page-home .hero-preview {
+        grid-template-columns: 1fr;
+        padding: 0.7rem;
+    }
+
+    .page-home .hero-preview__screen,
+    .page-home .hero-preview__panel {
+        min-height: 7.5rem;
+    }
+
+    .page-home .conversion-map {
+        grid-template-columns: 1fr;
+    }
+
+    .page-home .conversion-map__line {
+        display: none;
+    }
+
+    .page-contact .diagnostic-form__footer {
+        grid-template-columns: 1fr;
+    }
+
+    .page-contact .diagnostic-form__hint {
+        text-align: center;
+    }
+}
+
+@media (max-width: 540px) {
+    .page-home .hero-preview {
+        display: none;
+    }
+}
+
+/* UX/UI rhythm: reduce empty tablet space and let short supporting cards use the full row. */
+@media (max-width: 1040px) and (min-width: 721px) {
+    .page-home .hero-panel--diagnostic,
+    .page-panel {
+        width: 100%;
+        max-width: none;
+    }
+
+    .page-home .hero-panel__checks,
+    .page-panel__list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+    }
+
+    .page-home .hero-panel__check,
+    .page-panel__item {
+        align-content: start;
+    }
+
+    .page-home .hero-panel__check p,
+    .page-panel__item p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .page-home .hero-panel--diagnostic .panel-note {
+        max-width: min(100%, 52rem);
+    }
+}
+
+@media (max-width: 720px) {
+    .page-home .hero-strip__item {
+        grid-template-columns: 1fr;
+    }
+
+    .page-home .hero-strip__item span {
+        text-align: left;
+    }
+}
+
+/* Layout polish: wider text measures reduce excessive wrapping while keeping full copy visible. */
+.page-hero h1,
+.page-home .page-hero h1,
+.page-about .page-hero h1,
+.page-services .page-hero h1,
+.page-team .page-hero h1,
+.page-recommendations .page-hero h1,
+.page-contact .page-hero h1 {
+    max-width: min(100%, 34ch);
+    text-wrap: balance;
+}
+
+.page-hero h1,
+.page-about .page-hero h1,
+.page-services .page-hero h1,
+.page-team .page-hero h1,
+.page-recommendations .page-hero h1,
+.page-contact .page-hero h1 {
+    font-size: clamp(2.35rem, 5.2vw, 4.15rem);
+}
+
+.page-home .page-hero h1 {
+    font-size: clamp(2.35rem, 5.4vw, 3.25rem);
+}
+
+.page-hero .lead,
+.page-home .page-hero .lead,
+.page-about .page-hero .lead,
+.page-services .page-hero .lead,
+.page-team .page-hero .lead,
+.page-recommendations .page-hero .lead,
+.page-contact .page-hero .lead,
+.page-team .hero-support {
+    max-width: min(100%, 52rem);
+    line-height: 1.58;
+    text-wrap: pretty;
+}
+
+.section-heading,
+.page-home .section-heading--shift,
+.page-home .section-heading--process,
+.page-home .section-solutions .section-heading,
+.page-team .team-heading {
+    max-width: min(100%, 60rem);
+}
+
+.section-heading p,
+.page-home .section-solutions .section-heading p,
+.page-home .cta-panel__content p,
+.page-contact .diagnostic-form-card__header p {
+    max-width: min(100%, 54rem);
+}
+
+.section-heading h2,
+.cta-panel h2,
+.story-card h2,
+.spotlight-panel h2,
+.letter-card h2,
+.page-home .hero-panel--diagnostic h2,
+.page-home .feature-card--primary h3,
+.page-home .feature-card--medium h3,
+.page-home .shift-card h3,
+.page-home .cta-panel--home h2,
+.page-panel h2,
+.page-about .cta-panel--page h2,
+.page-services .cta-panel--page h2,
+.page-team .cta-panel--page h2,
+.page-recommendations .cta-panel--page h2,
+.page-about .about-positioning h2,
+.page-about .about-rhythm__lead h3,
+.page-services .service-band__intro h2,
+.page-services .service-lead h3,
+.page-team .team-hero-panel h2,
+.page-team .team-intro h2,
+.page-recommendations .proof-letter h2,
+.page-contact .contact-journey__intro h2,
+.page-contact .contact-primary h2,
+.page-contact .diagnostic-form-card h2,
+.page-contact .diagnostic-support h2 {
+    max-width: min(100%, 34ch);
+    text-wrap: balance;
+}
+
+.page-home .solutions-editorial .feature-card p,
+.page-home .feature-card--primary p,
+.page-home .shift-aside p,
+.page-home .timeline-step p,
+.page-team .team-card__description,
+.page-contact .contact-brief__intro p {
+    max-width: min(100%, 50rem);
+    line-height: 1.58;
+    text-wrap: pretty;
+}
+
+@media (max-width: 720px) {
+    .page-hero h1,
+    .page-home .page-hero h1,
+    .page-about .page-hero h1,
+    .page-services .page-hero h1,
+    .page-team .page-hero h1,
+    .page-recommendations .page-hero h1,
+    .page-contact .page-hero h1 {
+        max-width: 100%;
+        font-size: clamp(1.85rem, 7.6vw, 2.55rem);
+    }
+
+    .section-heading h2,
+    .cta-panel h2,
+    .page-home .hero-panel--diagnostic h2,
+    .page-home .feature-card--primary h3,
+    .page-home .shift-card h3,
+    .page-home .cta-panel--home h2,
+    .page-panel h2,
+    .page-about .about-positioning h2,
+    .page-services .service-band__intro h2,
+    .page-services .service-lead h3,
+    .page-team .team-intro h2,
+    .page-recommendations .proof-letter h2,
+    .page-contact .contact-journey__intro h2,
+    .page-contact .contact-primary h2,
+    .page-contact .diagnostic-form-card h2,
+    .page-contact .diagnostic-support h2 {
+        max-width: 100%;
+        font-size: clamp(1.45rem, 6.2vw, 2.15rem);
+    }
+
+    .page-hero .lead,
+    .page-home .page-hero .lead,
+    .page-about .page-hero .lead,
+    .page-services .page-hero .lead,
+    .page-team .page-hero .lead,
+    .page-recommendations .page-hero .lead,
+    .page-contact .page-hero .lead,
+    .page-team .hero-support {
+        line-height: 1.52;
+    }
+}
+
+/* Internal pages redesign: fewer narrow columns, stronger scanning rhythm. */
+.page-services .page-hero,
+.page-contact .page-hero {
+    padding-bottom: clamp(1.8rem, 3.5vw, 3.4rem);
+}
+
+.page-services .hero-grid,
+.page-contact .hero-grid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.82fr);
+    gap: clamp(1.4rem, 3vw, 2rem);
+}
+
+.page-services .page-hero h1,
+.page-contact .page-hero h1 {
+    max-width: 15ch;
+    font-size: clamp(2.65rem, 4.9vw, 4.6rem);
+}
+
+.page-services .page-panel,
+.page-contact .page-panel {
+    min-height: 100%;
+    padding: clamp(1.45rem, 2.2vw, 2rem);
+}
+
+.page-services .page-panel__list,
+.page-contact .page-panel__list {
+    gap: 0.75rem;
+}
+
+.page-services .service-groups {
+    gap: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.page-services .service-band {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+    padding: clamp(1.35rem, 2.4vw, 1.9rem);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    background:
+        radial-gradient(circle at 88% 8%, rgba(255, 255, 255, 0.06), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.016));
+    box-shadow: var(--shadow-soft), var(--shadow-inset);
+}
+
+.page-services .service-band--reverse .service-band__intro,
+.page-services .service-band--reverse .service-band__body {
+    order: initial;
+}
+
+.page-services .service-band__intro {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 1.1rem;
+    align-items: end;
+    padding-top: 0;
+}
+
+.page-services .service-band__intro .section-tag {
+    grid-column: 1 / -1;
+}
+
+.page-services .service-band__intro h2 {
+    max-width: 18ch;
+    font-size: clamp(2rem, 3.1vw, 3rem);
+}
+
+.page-services .service-band__intro p {
+    align-self: end;
+    max-width: 42rem;
+    margin-bottom: 0.16rem;
+    line-height: 1.58;
+}
+
+.page-services .service-band__body {
+    grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+    align-items: stretch;
+}
+
+.page-services .service-lead {
+    align-content: start;
+    min-height: 100%;
+    padding: clamp(1.35rem, 2.2vw, 1.75rem);
+}
+
+.page-services .service-lead h3 {
+    max-width: 15ch;
+    font-size: clamp(1.8rem, 2.7vw, 2.55rem);
+}
+
+.page-services .service-cluster {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.page-services .service-item {
+    align-content: start;
+    min-height: 100%;
+    padding: 1.1rem;
+}
+
+.page-services .service-item p {
+    font-size: 0.92rem;
+    line-height: 1.54;
+}
+
+.page-services .cta-panel--page,
+.page-contact .contact-primary,
+.page-contact .contact-brief,
+.page-contact .diagnostic-form-card,
+.page-contact .diagnostic-support,
+.page-contact .contact-journey__intro,
+.page-contact .contact-step {
+    border-color: rgba(255, 255, 255, 0.13);
+}
+
+.page-contact .contact-journey {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: clamp(1.35rem, 2.4vw, 1.9rem);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    background:
+        radial-gradient(circle at 86% 10%, rgba(255, 255, 255, 0.07), transparent 30%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.044), rgba(255, 255, 255, 0.016));
+    box-shadow: var(--shadow-soft), var(--shadow-inset);
+}
+
+.page-contact .contact-journey__intro {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-content: start;
+    align-items: end;
+    gap: 1rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+}
+
+.page-contact .contact-journey__intro .section-tag {
+    grid-column: 1 / -1;
+}
+
+.page-contact .contact-journey__intro p {
+    align-self: end;
+    max-width: 42rem;
+    margin-bottom: 0.12rem;
+    line-height: 1.58;
+}
+
+.page-contact .contact-journey__intro h2,
+.page-contact .contact-primary h2,
+.page-contact .diagnostic-form-card h2,
+.page-contact .diagnostic-support h2 {
+    max-width: 20ch;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.2vw, 3.1rem);
+    line-height: 1.02;
+    letter-spacing: 0;
+}
+
+.page-contact .contact-journey__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.page-contact .contact-step {
+    align-content: start;
+    min-height: 100%;
+}
+
+.page-contact .contact-diagnostic {
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+    gap: clamp(1rem, 2.4vw, 1.5rem);
+}
+
+.page-contact .diagnostic-support {
+    position: sticky;
+    top: 7rem;
+}
+
+.page-contact .contact-conversion {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.page-contact .contact-conversion .contact-primary {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.78fr);
+    align-items: end;
+}
+
+.page-contact .contact-primary .section-tag,
+.page-contact .contact-primary h2,
+.page-contact .contact-primary > p {
+    grid-column: 1;
+}
+
+.page-contact .contact-primary__channel,
+.page-contact .contact-primary .hero-actions {
+    grid-column: 2;
+}
+
+.page-contact .contact-brief {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 1.1rem;
+}
+
+.page-contact .contact-brief__intro {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.page-contact .contact-brief .social-links,
+.page-contact .contact-brief > strong,
+.page-contact .contact-brief .check-list,
+.page-contact .contact-brief .contact-direct {
+    grid-column: 2;
+}
+
+.page-contact .contact-brief__intro,
+.page-contact .contact-brief .social-links {
+    grid-row: 1;
+}
+
+.page-contact .contact-brief .check-list {
+    grid-row: 3;
+}
+
+.page-contact .contact-direct {
+    grid-row: 4;
+}
+
+@media (max-width: 1040px) {
+    .page-services .hero-grid,
+    .page-contact .hero-grid,
+    .page-services .service-band__intro,
+    .page-services .service-band__body,
+    .page-contact .contact-journey,
+    .page-contact .contact-diagnostic,
+    .page-contact .contact-conversion .contact-primary,
+    .page-contact .contact-brief {
+        grid-template-columns: 1fr;
+    }
+
+    .page-contact .diagnostic-support {
+        position: static;
+    }
+
+    .page-contact .contact-primary__channel,
+    .page-contact .contact-primary .hero-actions,
+    .page-contact .contact-brief .social-links,
+    .page-contact .contact-brief > strong,
+    .page-contact .contact-brief .check-list,
+    .page-contact .contact-brief .contact-direct {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .page-services .service-cluster,
+    .page-contact .contact-journey__steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .page-services .service-cluster,
+    .page-contact .contact-journey__steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .page-services .page-hero h1,
+    .page-contact .page-hero h1 {
+        max-width: 100%;
+        font-size: clamp(2.05rem, 8vw, 3rem);
+    }
+
+    .page-services .service-band {
+        padding: 1.1rem;
+        border-radius: var(--radius-lg);
+    }
+
+    .page-services .service-band__intro h2,
+    .page-services .service-lead h3,
+    .page-contact .contact-journey__intro h2,
+    .page-contact .contact-primary h2,
+    .page-contact .diagnostic-form-card h2,
+    .page-contact .diagnostic-support h2 {
+        max-width: 100%;
+        font-size: clamp(1.55rem, 6.6vw, 2.2rem);
+    }
+}
+
+.page-about .about-positioning h2,
+.page-team .team-intro h2,
+.page-recommendations .proof-letter h2 {
+    max-width: 20ch;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.15vw, 3.1rem);
+    line-height: 1.02;
+    letter-spacing: 0;
+}
+
+.page-about .about-positioning p,
+.page-team .team-intro p,
+.page-recommendations .proof-letter p {
+    max-width: 48rem;
+    line-height: 1.58;
+}
+
+@media (max-width: 720px) {
+    .page-about .about-positioning h2,
+    .page-team .team-intro h2,
+    .page-recommendations .proof-letter h2 {
+        max-width: 100%;
+        font-size: clamp(1.55rem, 6.6vw, 2.2rem);
+    }
+}
+
+/* Compact content pass: shorter copy, tighter cards and fewer empty gaps. */
+.page-hero .lead,
+.page-home .page-hero .lead,
+.page-about .page-hero .lead,
+.page-services .page-hero .lead,
+.page-team .page-hero .lead,
+.page-recommendations .page-hero .lead,
+.page-contact .page-hero .lead,
+.page-team .hero-support {
+    max-width: min(100%, 44rem);
+    font-size: 0.96rem;
+    line-height: 1.46;
+}
+
+.page-about .page-hero h1,
+.page-services .page-hero h1,
+.page-team .page-hero h1,
+.page-recommendations .page-hero h1,
+.page-contact .page-hero h1 {
+    max-width: 18ch;
+    font-size: clamp(2.2rem, 4.35vw, 3.8rem);
+}
+
+.page-services .page-hero,
+.page-contact .page-hero {
+    padding-bottom: clamp(1.25rem, 2.4vw, 2.25rem);
+}
+
+.page-services .hero-grid,
+.page-contact .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(330px, 0.78fr);
+    gap: clamp(1rem, 2.2vw, 1.55rem);
+}
+
+.page-panel,
+.page-services .page-panel,
+.page-contact .page-panel {
+    gap: 0.7rem;
+    padding: clamp(1rem, 1.8vw, 1.35rem);
+}
+
+.page-panel h2 {
+    max-width: 24ch;
+    font-size: clamp(1.35rem, 2.15vw, 2rem);
+}
+
+.page-panel__list,
+.page-services .page-panel__list,
+.page-contact .page-panel__list {
+    gap: 0.5rem;
+}
+
+.page-panel__item {
+    gap: 0.24rem;
+    padding: 0.72rem 0.78rem;
+    border-radius: var(--radius-sm);
+}
+
+.page-panel__item strong {
+    font-size: 0.88rem;
+}
+
+.page-panel__item p {
+    font-size: 0.82rem;
+    line-height: 1.34;
+}
+
+.cta-panel__content,
+.cta-panel__conversion {
+    gap: 0.65rem;
+}
+
+.page-about .cta-panel--page,
+.page-services .cta-panel--page,
+.page-team .cta-panel--page,
+.page-recommendations .cta-panel--page {
+    gap: 1rem;
+    padding: clamp(1.2rem, 2.4vw, 1.65rem);
+}
+
+.page-about .cta-panel--page h2,
+.page-services .cta-panel--page h2,
+.page-team .cta-panel--page h2,
+.page-recommendations .cta-panel--page h2 {
+    max-width: 20ch;
+    font-size: clamp(1.75rem, 3.2vw, 2.8rem);
+}
+
+.page-services .service-groups {
+    gap: clamp(0.95rem, 2vw, 1.45rem);
+}
+
+.page-services .service-band {
+    gap: 0.8rem;
+    padding: clamp(1rem, 1.9vw, 1.35rem);
+    border-radius: var(--radius-lg);
+}
+
+.page-services .service-band__intro {
+    gap: 0.8rem;
+}
+
+.page-services .service-band__intro h2 {
+    max-width: 21ch;
+    font-size: clamp(1.55rem, 2.55vw, 2.35rem);
+}
+
+.page-services .service-band__intro p {
+    max-width: 34rem;
+    font-size: 0.9rem;
+    line-height: 1.42;
+}
+
+.page-services .service-band__body {
+    grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
+    align-items: start;
+    gap: 0.75rem;
+}
+
+.page-services .service-lead {
+    gap: 0.65rem;
+    min-height: 0;
+    padding: clamp(1rem, 1.7vw, 1.25rem);
+}
+
+.page-services .service-lead h3 {
+    max-width: 18ch;
+    font-size: clamp(1.45rem, 2.2vw, 2.1rem);
+}
+
+.page-services .service-lead p,
+.page-services .service-item p {
+    font-size: 0.86rem;
+    line-height: 1.38;
+}
+
+.page-services .service-cluster {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    align-items: start;
+}
+
+.page-services .service-item {
+    min-height: 0;
+    gap: 0.45rem;
+    padding: 0.88rem;
+    border-radius: var(--radius-md);
+}
+
+.page-services .service-item h4 {
+    font-size: 0.93rem;
+}
+
+.page-services .service-points {
+    gap: 0.42rem;
+    padding-top: 0.05rem;
+}
+
+.page-services .service-points li {
+    font-size: 0.84rem;
+    line-height: 1.34;
+}
+
+.page-contact .contact-journey {
+    gap: 0.8rem;
+    padding: clamp(1rem, 1.9vw, 1.35rem);
+    border-radius: var(--radius-lg);
+}
+
+.page-contact .contact-journey__intro {
+    gap: 0.8rem;
+}
+
+.page-contact .contact-journey__intro h2,
+.page-contact .contact-primary h2,
+.page-contact .diagnostic-form-card h2,
+.page-contact .diagnostic-support h2 {
+    max-width: 22ch;
+    font-size: clamp(1.55rem, 2.6vw, 2.35rem);
+}
+
+.page-contact .contact-journey__intro p,
+.page-contact .contact-step p,
+.page-contact .diagnostic-form-card__header p,
+.page-contact .diagnostic-support p,
+.page-contact .contact-primary p,
+.page-contact .contact-brief__intro p {
+    font-size: 0.9rem;
+    line-height: 1.42;
+}
+
+.page-contact .contact-step {
+    min-height: 0;
+    gap: 0.45rem;
+    padding: 0.9rem;
+    border-radius: var(--radius-md);
+}
+
+.page-contact .contact-step h3 {
+    font-size: 0.98rem;
+}
+
+.page-contact .contact-diagnostic,
+.page-contact .contact-conversion {
+    gap: 0.9rem;
+}
+
+.page-contact .diagnostic-form-card,
+.page-contact .diagnostic-support,
+.page-contact .contact-primary,
+.page-contact .contact-brief {
+    gap: 0.75rem;
+    padding: clamp(1.05rem, 1.9vw, 1.35rem);
+    border-radius: var(--radius-lg);
+}
+
+.page-contact .diagnostic-form-card__header,
+.page-contact .diagnostic-form,
+.page-contact .diagnostic-form__footer {
+    gap: 0.65rem;
+}
+
+.page-contact .contact-primary__channel,
+.page-contact .contact-direct__item {
+    padding: 0.78rem 0.85rem;
+    border-radius: var(--radius-sm);
+}
+
+.page-contact .contact-brief {
+    gap: 0.85rem;
+}
+
+.page-contact .contact-brief .check-list {
+    gap: 0.45rem;
+}
+
+.page-contact .contact-direct {
+    gap: 0.55rem;
+}
+
+.page-about .about-positioning h2,
+.page-team .team-intro h2,
+.page-recommendations .proof-letter h2 {
+    max-width: 22ch;
+    font-size: clamp(1.55rem, 2.55vw, 2.35rem);
+}
+
+.page-about .about-positioning p,
+.page-team .team-intro p,
+.page-recommendations .proof-letter p,
+.page-team .team-card__description {
+    font-size: 0.9rem;
+    line-height: 1.42;
+}
+
+.page-team .team-card__name {
+    font-size: clamp(1.55rem, 2.5vw, 2.15rem);
+}
+
+.page-home .shift-card,
+.page-home .shift-aside,
+.page-home .timeline-step,
+.page-recommendations .letter-card {
+    border-radius: var(--radius-lg);
+}
+
+@media (max-width: 1040px) {
+    .page-services .hero-grid,
+    .page-contact .hero-grid,
+    .page-services .service-band__body {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .page-about .page-hero h1,
+    .page-services .page-hero h1,
+    .page-team .page-hero h1,
+    .page-recommendations .page-hero h1,
+    .page-contact .page-hero h1 {
+        font-size: clamp(1.85rem, 7.2vw, 2.55rem);
+    }
+
+    .page-panel,
+    .page-services .service-band,
+    .page-contact .contact-journey,
+    .page-contact .diagnostic-form-card,
+    .page-contact .diagnostic-support,
+    .page-contact .contact-primary,
+    .page-contact .contact-brief {
+        padding: 0.95rem;
+        border-radius: var(--radius-lg);
+    }
+
+    .page-contact .contact-journey__intro {
+        grid-template-columns: 1fr;
+    }
+
+    .page-services .service-cluster,
+    .page-contact .contact-journey__steps {
+        gap: 0.6rem;
     }
 }

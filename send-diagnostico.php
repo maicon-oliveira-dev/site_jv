@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 date_default_timezone_set('America/Sao_Paulo');
 
-$successRedirect = '/contato?status=success#diagnostico';
-$errorRedirect = '/contato?status=error#diagnostico';
+$successRedirect = './contato.html?status=success#diagnostico';
+$errorRedirect = './contato.html?status=error#diagnostico';
 
 // Endereco de destino configurado na HostGator para receber os diagnosticos do site.
 $to = 'comercial@agenciajv.com';

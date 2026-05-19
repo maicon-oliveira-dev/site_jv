@@ -2,16 +2,7 @@ document.documentElement.classList.add("motion-ready");
 
 const body = document.body;
 const preloader = document.getElementById("jv-preloader");
-const normalizePath = (path) => {
-    const normalizedPath = path
-        .replace(/index\.html$/i, "")
-        .replace(/\.html$/i, "")
-        .replace(/\/+$/, "");
-
-    return normalizedPath === "" ? "/" : normalizedPath;
-};
-
-const currentPage = normalizePath(window.location.pathname);
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
 if (preloader && body) {
     body.classList.add("is-loading");
@@ -19,18 +10,25 @@ if (preloader && body) {
 }
 
 document.querySelectorAll(".main-nav a").forEach((link) => {
-    const href = link.getAttribute("href");
-
-    if (!href) {
-        return;
-    }
-
-    const linkUrl = new URL(href, window.location.origin);
-
-    if (normalizePath(linkUrl.pathname) === currentPage) {
+    if (link.getAttribute("href") === currentPage) {
         link.setAttribute("aria-current", "page");
     }
 });
+
+(() => {
+    const existingCta = document.querySelector(".mobile-diagnostic-cta");
+
+    if (existingCta) {
+        return;
+    }
+
+    const cta = document.createElement("a");
+    cta.className = "mobile-diagnostic-cta";
+    cta.href = currentPage === "contato.html" ? "#diagnostico" : "./contato.html#diagnostico";
+    cta.textContent = "Solicitar diagn\u00f3stico";
+    cta.setAttribute("aria-label", "Solicitar diagn\u00f3stico da JV Digital");
+    document.body.appendChild(cta);
+})();
 
 (() => {
     if (!preloader || !body) {
@@ -82,7 +80,30 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
 
 (() => {
     const statusHost = document.querySelector("[data-form-status]");
+    const diagnosticForm = document.querySelector(".diagnostic-form");
     const whatsappAfterSuccessUrl = "https://wa.me/5547997699364?text=Ol%C3%A1%2C%20JV%20Digital%21%20Enviei%20o%20formul%C3%A1rio%20de%20diagn%C3%B3stico%20e%20gostaria%20de%20falar%20com%20um%20especialista.";
+
+    if (diagnosticForm) {
+        diagnosticForm.addEventListener("invalid", () => {
+            diagnosticForm.classList.add("diagnostic-form--checked");
+        }, true);
+
+        diagnosticForm.addEventListener("submit", () => {
+            if (!diagnosticForm.checkValidity()) {
+                diagnosticForm.classList.add("diagnostic-form--checked");
+                return;
+            }
+
+            const submitButton = diagnosticForm.querySelector("button[type='submit']");
+
+            diagnosticForm.classList.add("diagnostic-form--submitting");
+
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = submitButton.dataset.loadingLabel || "Enviando...";
+            }
+        });
+    }
 
     if (!statusHost) {
         return;
@@ -101,7 +122,10 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
         },
         error: {
             tone: "error",
-            html: "<strong class=\"form-status__title\">N&atilde;o foi poss&iacute;vel enviar agora. Revise os dados e tente novamente.</strong>"
+            html: `
+                <strong class="form-status__title">N&atilde;o foi poss&iacute;vel enviar agora.</strong>
+                <p class="form-status__text">Revise os campos, confirme se as informa&ccedil;&otilde;es obrigat&oacute;rias foram preenchidas e tente novamente.</p>
+            `
         }
     };
 
