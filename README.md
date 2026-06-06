@@ -7,8 +7,9 @@ Site institucional premium multi-page para a JV Digital, com direção visual es
 - `index.html`
 - `sobre.html`
 - `servicos.html`
+- `projetos.html`
+- `projeto.html`
 - `equipe.html`
-- `carta-recomendacao.html`
 - `contato.html`
 - `assets/css/`
 - `assets/js/`

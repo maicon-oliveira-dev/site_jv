@@ -10,10 +10,30 @@ if (preloader && body) {
 }
 
 document.querySelectorAll(".main-nav a").forEach((link) => {
-    if (link.getAttribute("href") === currentPage) {
+    const href = link.getAttribute("href");
+    const normalizedCurrentPage = currentPage === "projeto.html" ? "projetos.html" : currentPage;
+
+    link.removeAttribute("aria-current");
+
+    if (href === normalizedCurrentPage) {
         link.setAttribute("aria-current", "page");
     }
 });
+
+(() => {
+    const existingCta = document.querySelector(".mobile-diagnostic-cta");
+
+    if (existingCta) {
+        return;
+    }
+
+    const cta = document.createElement("a");
+    cta.className = "mobile-diagnostic-cta";
+    cta.href = currentPage === "contato.html" ? "#projeto" : "./contato.html#projeto";
+    cta.textContent = "Come\u00e7ar um projeto";
+    cta.setAttribute("aria-label", "Come\u00e7ar um projeto com a JV Digital");
+    document.body.appendChild(cta);
+})();
 
 (() => {
     if (!preloader || !body) {
@@ -65,6 +85,30 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
 
 (() => {
     const statusHost = document.querySelector("[data-form-status]");
+    const diagnosticForm = document.querySelector(".diagnostic-form");
+    const whatsappAfterSuccessUrl = "https://wa.me/5547997699364?text=Ol%C3%A1%2C%20JV%20Digital%21%20Enviei%20o%20briefing%20do%20projeto%20e%20gostaria%20de%20falar%20com%20um%20especialista.";
+
+    if (diagnosticForm) {
+        diagnosticForm.addEventListener("invalid", () => {
+            diagnosticForm.classList.add("diagnostic-form--checked");
+        }, true);
+
+        diagnosticForm.addEventListener("submit", () => {
+            if (!diagnosticForm.checkValidity()) {
+                diagnosticForm.classList.add("diagnostic-form--checked");
+                return;
+            }
+
+            const submitButton = diagnosticForm.querySelector("button[type='submit']");
+
+            diagnosticForm.classList.add("diagnostic-form--submitting");
+
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = submitButton.dataset.loadingLabel || "Enviando...";
+            }
+        });
+    }
 
     if (!statusHost) {
         return;
@@ -73,17 +117,33 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
     const url = new URL(window.location.href);
     const status = url.searchParams.get("status");
     const messages = {
-        success: "Diagn&oacute;stico enviado com sucesso. A JV Digital entrar&aacute; em contato em breve.",
-        error: "N&atilde;o foi poss&iacute;vel enviar agora. Tente novamente ou fale conosco pelo WhatsApp."
+        success: {
+            tone: "success",
+            html: `
+                <strong class="form-status__title">Briefing enviado com sucesso. A JV Digital recebeu suas informa&ccedil;&otilde;es.</strong>
+                <p class="form-status__text">Agora, se quiser acelerar o atendimento, fale com um especialista pelo WhatsApp.</p>
+                <a class="btn btn-ghost form-status__cta" href="${whatsappAfterSuccessUrl}" target="_blank" rel="noopener noreferrer" aria-label="Falar com especialista da JV Digital pelo WhatsApp ap&oacute;s enviar o briefing">Falar com especialista</a>
+            `
+        },
+        error: {
+            tone: "error",
+            html: `
+                <strong class="form-status__title">N&atilde;o foi poss&iacute;vel enviar agora.</strong>
+                <p class="form-status__text">Revise os campos, confirme se as informa&ccedil;&otilde;es obrigat&oacute;rias foram preenchidas e tente novamente.</p>
+            `
+        }
     };
 
     if (!status || !messages[status]) {
         return;
     }
 
-    statusHost.innerHTML = messages[status];
+    const message = messages[status];
+
+    statusHost.innerHTML = message.html;
     statusHost.hidden = false;
-    statusHost.classList.add(status === "success" ? "form-status--success" : "form-status--error");
+    statusHost.classList.remove("form-status--success", "form-status--error");
+    statusHost.classList.add(message.tone === "success" ? "form-status--success" : "form-status--error");
     statusHost.setAttribute("role", status === "success" ? "status" : "alert");
     statusHost.setAttribute("tabindex", "-1");
     statusHost.focus();
