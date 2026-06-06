@@ -11,23 +11,23 @@
     background: #080808;
 }
 
-.page-home main,
-.page-home .home-footer {
-    width: var(--frame);
-    margin-inline: auto;
-    overflow: hidden;
-    background: #080808;
-}
+@media (min-width: 1200px) {
+    .page-home main,
+    .page-home .home-footer {
+        width: var(--frame);
+        margin-inline: auto;
+        overflow: hidden;
+        background: #080808;
+    }
 
-.page-home .container,
-.page-home .site-header .container {
-    width: var(--container);
-    max-width: var(--container);
-    margin-inline: auto;
-    padding-inline: 0;
-}
+    .page-home .container,
+    .page-home .site-header .container {
+        width: var(--container);
+        max-width: var(--container);
+        margin-inline: auto;
+        padding-inline: 0;
+    }
 
-@media (min-width: 721px) {
     .page-home .site-header {
         position: absolute;
         top: 0;
@@ -717,6 +717,59 @@
         color: rgba(255, 255, 255, 0.72);
         font-size: calc(34.4 * var(--u));
         line-height: 1.16;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1439px) {
+    .page-home .header-inner {
+        padding-inline: clamp(2.9rem, 5vw, 4.5rem);
+    }
+
+    .page-home .main-nav {
+        gap: clamp(0.3rem, 0.75vw, 0.55rem);
+        margin-left: clamp(1.2rem, 2vw, 1.9rem);
+    }
+
+    .page-home .main-nav a {
+        padding: clamp(0.62rem, 0.92vw, 0.74rem) clamp(1rem, 1.7vw, 1.25rem);
+        font-size: clamp(0.88rem, 0.96vw, 0.95rem);
+    }
+
+    .page-home .header-cta {
+        width: clamp(16.5rem, 22vw, 18.75rem);
+        height: clamp(3.55rem, 4.6vw, 4.15rem);
+        font-size: clamp(0.9rem, 1vw, 0.98rem);
+    }
+
+    .home-hero__copy {
+        top: clamp(31rem, 48vw, 34rem);
+        max-width: clamp(29rem, 35vw, 32rem);
+        gap: clamp(1rem, 1.4vw, 1.25rem);
+    }
+
+    .home-hero__copy h1 {
+        font-size: clamp(2.9rem, 3.45vw, 3.45rem);
+    }
+
+    .home-hero__copy p {
+        max-width: clamp(25rem, 29vw, 28rem);
+        font-size: clamp(1rem, 1.32vw, 1.12rem);
+    }
+
+    .home-hero__project-btn {
+        width: clamp(18rem, 23vw, 20rem);
+        height: clamp(3rem, 3.7vw, 3.3rem);
+        font-size: clamp(0.88rem, 0.96vw, 0.96rem);
+    }
+
+    .home-hero__metrics {
+        gap: clamp(2rem, 5.5vw, 3.6rem);
+        padding-top: clamp(2.3rem, 4vw, 3.2rem);
+    }
+
+    .home-hero__metrics p {
+        max-width: 18rem;
+        font-size: clamp(1.02rem, 1.18vw, 1.12rem);
     }
 }
 

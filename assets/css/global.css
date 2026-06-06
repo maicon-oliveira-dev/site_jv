@@ -556,7 +556,23 @@ body.site-loaded .jv-preloader__line {
 
 @media (max-width: 1040px) {
     .header-inner {
+        gap: 0.75rem;
+        padding: 0.82rem 0.95rem;
         border-radius: var(--radius-lg);
+    }
+
+    .main-nav {
+        gap: 0.15rem;
+    }
+
+    .main-nav a {
+        padding: 0.72rem 0.78rem;
+        font-size: 0.9rem;
+    }
+
+    .header-cta {
+        padding: 0.82rem 1rem;
+        font-size: 0.92rem;
     }
 
     .footer-grid {

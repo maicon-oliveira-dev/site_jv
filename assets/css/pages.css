@@ -2149,7 +2149,7 @@
     }
 }
 
-@media (min-width: 721px) {
+@media (min-width: 1200px) {
     .page-home {
         --home-frame: min(100vw, 1920px);
         --home-container: min(90.833vw, 1744px);
@@ -2608,7 +2608,7 @@
 }
 
 /* Absolute final override: keep HOME.png layout after older experimental layers. */
-@media (min-width: 721px) {
+@media (min-width: 1200px) {
     .page-home .site-header {
         position: absolute;
         padding-top: min(5.885vw, 113px);
@@ -2770,7 +2770,7 @@
 }
 
 /* Figma HOME.png final alignment. The home header belongs to the hero, not to scroll. */
-@media (min-width: 721px) {
+@media (min-width: 1200px) {
     .page-home .site-header {
         position: absolute;
         padding-top: min(5.885vw, 113px);
@@ -5399,27 +5399,99 @@
 }
 
 @media (max-width: 1120px) {
+    .page-home .site-header {
+        padding-top: 0.95rem;
+    }
+
+    .page-home .site-header .container {
+        width: min(100%, 64rem);
+        padding-right: clamp(1rem, 2.8vw, 1.35rem);
+        padding-left: clamp(1rem, 2.8vw, 1.35rem);
+    }
+
     .page-home .header-inner {
+        min-height: 4rem;
+        padding: 0.4rem 0.58rem;
         gap: 0.55rem;
     }
 
+    .page-home .main-nav {
+        gap: 0.15rem;
+        margin-left: 0.5rem;
+    }
+
     .page-home .main-nav a {
-        padding-inline: 0.72rem;
+        padding: 0.66rem 0.74rem;
+        font-size: 0.84rem;
+    }
+
+    .page-home .header-cta {
+        min-height: 3rem;
+        padding-inline: 1rem;
+        font-size: 0.92rem;
+    }
+
+    .home-hero {
+        min-height: 39rem;
+        padding-top: 7.6rem;
+        padding-bottom: 2.8rem;
+    }
+
+    .home-hero__inner {
+        grid-template-columns: minmax(0, 1fr) minmax(13.5rem, 15rem);
+        gap: 1.35rem 1.6rem;
+    }
+
+    .home-hero__copy {
+        max-width: 28rem;
+    }
+
+    .home-hero__copy h1 {
+        font-size: clamp(2.2rem, 4.2vw, 3.05rem);
+    }
+
+    .home-hero__copy p {
+        max-width: 25rem;
+        font-size: 0.98rem;
+        line-height: 1.32;
+    }
+
+    .home-hero__project-btn {
+        min-width: min(100%, 14.5rem);
+        min-height: 2.85rem;
+        padding-inline: 1.1rem;
+        margin-bottom: 0.2rem;
+        font-size: 0.86rem;
     }
 
     .home-hero__metrics {
-        gap: 2rem;
+        gap: 1.25rem;
+        padding-top: 1.15rem;
+    }
+
+    .home-hero__metrics p {
+        font-size: 1rem;
+        line-height: 1.18;
+    }
+
+    .page-home .pain-panel {
+        gap: 1.5rem;
+        padding: 1.35rem;
+    }
+
+    .page-home .pain-panel h2 {
+        font-size: clamp(2.35rem, 4.6vw, 3.2rem);
     }
 }
 
 @media (max-width: 900px) {
     .page-home .site-header {
-        padding-top: 0.8rem;
+        padding-top: 0.85rem;
     }
 
     .page-home .header-inner {
-        min-height: 4.1rem;
-        padding: 0.45rem 0.65rem;
+        min-height: 4rem;
+        padding: 0.42rem 0.6rem;
         border-radius: 2rem;
     }
 
@@ -5438,8 +5510,9 @@
     }
 
     .home-hero {
-        min-height: 45rem;
-        padding-top: 8.5rem;
+        min-height: 41.5rem;
+        padding-top: 7.75rem;
+        padding-bottom: 2.75rem;
     }
 
     .home-hero__inner,
@@ -5454,17 +5527,52 @@
             "copy"
             "action"
             "metrics";
-        gap: 1.8rem;
+        gap: 1.5rem;
+    }
+
+    .home-hero__copy {
+        width: min(100%, 28rem);
+        gap: 0.85rem;
+    }
+
+    .home-hero__copy h1 {
+        font-size: clamp(2rem, 5vw, 2.65rem);
+    }
+
+    .home-hero__copy p {
+        width: min(100%, 25rem);
+        font-size: 0.98rem;
+        line-height: 1.35;
     }
 
     .home-hero__project-btn {
         justify-self: start;
         margin-bottom: 0;
+        min-width: min(100%, 15.5rem);
+        min-height: 2.9rem;
+        font-size: 0.9rem;
     }
 
     .home-hero__metrics,
     .home-footer__grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .home-hero__metrics {
+        gap: 1rem 1.3rem;
+        padding-top: 1.1rem;
+    }
+
+    .home-hero__metrics p {
+        font-size: 0.98rem;
+        line-height: 1.2;
+    }
+
+    .page-home .pain-panel,
+    .evidence-panel,
+    .home-cta {
+        gap: 1.25rem;
+        padding: 1.35rem;
     }
 
     .showcase-tile__content {
@@ -5479,28 +5587,27 @@
 
 @media (max-width: 720px) {
     .page-home {
-        --home-gutter: 1rem;
+        --home-gutter: 0.9rem;
     }
 
     .page-home .container {
-        width: min(100%, 24rem);
+        width: min(100%, 25.5rem);
         max-width: 100%;
-        margin-right: auto;
-        margin-left: 0;
+        margin-inline: auto;
     }
 
     .page-home .site-header .container {
-        width: min(100%, 24rem);
-        padding-right: 0.75rem;
-        padding-left: 0.75rem;
+        width: min(100%, 25rem);
+        padding-right: 0.9rem;
+        padding-left: 0.9rem;
     }
 
     .page-home .header-inner {
         width: 100%;
         max-width: 100%;
-        min-height: 3.7rem;
-        padding: 0.38rem 0.5rem;
-        border-radius: 1.4rem;
+        min-height: 3.75rem;
+        padding: 0.4rem 0.5rem;
+        border-radius: 1.5rem;
         overflow: hidden;
     }
 
@@ -5518,26 +5625,28 @@
     }
 
     .home-hero {
-        min-height: 40rem;
-        padding-top: 6.9rem;
-        padding-bottom: 3rem;
-        background-position: 58% top;
+        min-height: clamp(36.5rem, 146vw, 38.5rem);
+        padding-top: 6.5rem;
+        padding-bottom: 2.5rem;
+        background-position: 60% top;
     }
 
     .home-hero__copy {
-        width: min(100%, 21.5rem);
+        width: min(100%, 21rem);
         max-width: 100%;
+        gap: 0.8rem;
     }
 
     .home-hero__copy h1 {
-        font-size: clamp(1.78rem, 7.6vw, 2.16rem);
-        line-height: 1.14;
+        font-size: clamp(1.95rem, 7.9vw, 2.35rem);
+        line-height: 1.12;
     }
 
     .home-hero__copy p {
-        width: min(100%, 21.5rem);
+        width: min(100%, 21rem);
         max-width: 100%;
-        font-size: 0.98rem;
+        font-size: clamp(0.98rem, 4.1vw, 1.03rem);
+        line-height: 1.35;
     }
 
     .home-hero__project-btn,
@@ -5546,6 +5655,8 @@
     .home-cta .btn {
         width: 100%;
         min-width: 0;
+        min-height: 2.9rem;
+        font-size: 0.88rem;
     }
 
     .home-hero__metrics,
@@ -5555,27 +5666,30 @@
     }
 
     .home-hero__metrics {
-        gap: 1rem;
-        padding-top: 1.3rem;
+        gap: 0.9rem;
+        padding-top: 1.15rem;
     }
 
     .home-hero__metrics p {
         max-width: 100%;
-        font-size: 1rem;
+        font-size: 0.98rem;
+        line-height: 1.22;
     }
 
     .page-home .pain-panel,
     .evidence-panel,
     .home-cta {
-        padding: 1.2rem;
-        border-radius: 20px;
+        gap: 1rem;
+        padding: 1.1rem;
+        border-radius: 1.15rem;
     }
 
     .page-home .pain-panel h2,
     .evidence-panel h2,
     .home-cta h2 {
         max-width: 100%;
-        font-size: clamp(2rem, 10vw, 3rem);
+        font-size: clamp(1.9rem, 9.4vw, 2.55rem);
+        line-height: 1.06;
     }
 
     .page-home .section-tag {
@@ -5632,6 +5746,32 @@
         font-size: 0.88rem;
     }
 
+    .page-home .pain-panel p {
+        font-size: 0.92rem;
+        line-height: 1.45;
+    }
+
+    .page-home .pain-insights {
+        gap: 0.8rem;
+    }
+
+    .page-home .pain-insights article,
+    .evidence-list article {
+        gap: 0.35rem;
+        padding: 0.9rem;
+    }
+
+    .page-home .pain-insights strong,
+    .evidence-list strong {
+        font-size: 0.92rem;
+    }
+
+    .page-home .pain-insights small,
+    .evidence-list p {
+        font-size: 0.84rem;
+        line-height: 1.35;
+    }
+
     .home-cta__logo {
         order: -1;
     }
@@ -5648,7 +5788,7 @@
 }
 
 /* Final Figma HOME.png alignment. */
-@media (min-width: 721px) {
+@media (min-width: 1200px) {
     .page-home .site-header {
         position: absolute;
         padding-top: min(5.885vw, 113px);
@@ -5785,7 +5925,7 @@
 }
 
 /* Desktop home frame lock: keeps the Figma 1920px composition proportional on PC screens. */
-@media (min-width: 721px) {
+@media (min-width: 1200px) {
     .page-home {
         --home-frame: min(100vw, 1920px);
         --home-container: min(90.833vw, 1744px);
@@ -6243,7 +6383,7 @@
     }
 }
 /* Absolute final override: keep HOME.png layout after older experimental layers. */
-@media (min-width: 721px) {
+@media (min-width: 1200px) {
     .page-home .site-header {
         position: absolute;
         padding-top: min(5.885vw, 113px);

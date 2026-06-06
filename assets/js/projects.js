@@ -132,7 +132,7 @@
                     <div class="container">
                         <div class="section-heading">
                             <span class="section-tag">Projeto</span>
-                            <h1>Projeto n&atilde;o encontrado.</h1>
+                            <h1>Projeto não encontrado.</h1>
                             <p>Volte para a lista de projetos e escolha outro trabalho.</p>
                             <a href="./projetos.html" class="btn btn-primary">Ver projetos</a>
                         </div>
@@ -165,7 +165,7 @@
                         <h1>${escapeHtml(project.title)}</h1>
                         <p class="lead">${escapeHtml(project.description)}</p>
                         <div class="hero-actions">
-                            <a href="./contato.html#projeto" class="btn btn-primary">Quero uma presen&ccedil;a nesse n&iacute;vel</a>
+                            <a href="./contato.html#projeto" class="btn btn-primary">Quero uma presença nesse nível</a>
                             ${externalButton}
                         </div>
                     </div>
@@ -183,17 +183,17 @@
                         <p>${escapeHtml(project.problem)}</p>
                     </article>
                     <article class="surface-card case-study__block" data-reveal>
-                        <span class="section-tag">Solu&ccedil;&atilde;o</span>
-                        <h2>Como a JV estruturou a percep&ccedil;&atilde;o.</h2>
+                        <span class="section-tag">Solução</span>
+                        <h2>Como a JV estruturou a percepção.</h2>
                         <p>${escapeHtml(project.solution)}</p>
                     </article>
                     <article class="surface-card case-study__block" data-reveal>
                         <span class="section-tag">Entregas</span>
-                        <h2>O que foi constru&iacute;do.</h2>
+                        <h2>O que foi construído.</h2>
                         <ul class="check-list">${deliverables}</ul>
                     </article>
                     <aside class="surface-card case-study__block" data-reveal>
-                        <span class="section-tag">Servi&ccedil;os</span>
+                        <span class="section-tag">Serviços</span>
                         <h2>Frentes envolvidas.</h2>
                         <ul class="check-list">${services}</ul>
                     </aside>
@@ -205,7 +205,7 @@
                     <div class="section-heading" data-reveal>
                         <span class="section-tag">Galeria</span>
                         <h2>Visual do projeto.</h2>
-                        <p>As capas abaixo funcionam como estrutura editorial at&eacute; a galeria definitiva ser inserida com os arquivos finais.</p>
+                        <p>As capas abaixo funcionam como estrutura editorial até a galeria definitiva ser inserida com os arquivos finais.</p>
                     </div>
                     <div class="case-gallery" data-reveal>${gallery}</div>
                 </div>
@@ -215,9 +215,9 @@
                 <div class="container">
                     <div class="cta-panel cta-panel--page" data-reveal data-spotlight>
                         <div class="cta-panel__content">
-                            <span class="section-tag">Pr&oacute;ximo passo</span>
-                            <h2>Quer uma presen&ccedil;a nesse n&iacute;vel?</h2>
-                            <p>Conte sua maior dor e o investimento dispon&iacute;vel para entender o melhor caminho de projeto.</p>
+                            <span class="section-tag">Próximo passo</span>
+                            <h2>Quer uma presença nesse nível?</h2>
+                            <p>Conte sua maior dor e o investimento disponível para entender o melhor caminho de projeto.</p>
                         </div>
                         <div class="cta-panel__conversion">
                             <a href="./contato.html#projeto" class="btn btn-primary">Falar sobre meu projeto</a>

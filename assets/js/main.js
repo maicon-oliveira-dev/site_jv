@@ -30,8 +30,8 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
     const cta = document.createElement("a");
     cta.className = "mobile-diagnostic-cta";
     cta.href = currentPage === "contato.html" ? "#projeto" : "./contato.html#projeto";
-    cta.textContent = "Come\u00e7ar um projeto";
-    cta.setAttribute("aria-label", "Come\u00e7ar um projeto com a JV Digital");
+    cta.textContent = "Começar um projeto";
+    cta.setAttribute("aria-label", "Começar um projeto com a JV Digital");
     document.body.appendChild(cta);
 })();
 
@@ -120,16 +120,16 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
         success: {
             tone: "success",
             html: `
-                <strong class="form-status__title">Briefing enviado com sucesso. A JV Digital recebeu suas informa&ccedil;&otilde;es.</strong>
+                <strong class="form-status__title">Briefing enviado com sucesso. A JV Digital recebeu suas informações.</strong>
                 <p class="form-status__text">Agora, se quiser acelerar o atendimento, fale com um especialista pelo WhatsApp.</p>
-                <a class="btn btn-ghost form-status__cta" href="${whatsappAfterSuccessUrl}" target="_blank" rel="noopener noreferrer" aria-label="Falar com especialista da JV Digital pelo WhatsApp ap&oacute;s enviar o briefing">Falar com especialista</a>
+                <a class="btn btn-ghost form-status__cta" href="${whatsappAfterSuccessUrl}" target="_blank" rel="noopener noreferrer" aria-label="Falar com especialista da JV Digital pelo WhatsApp após enviar o briefing">Falar com especialista</a>
             `
         },
         error: {
             tone: "error",
             html: `
-                <strong class="form-status__title">N&atilde;o foi poss&iacute;vel enviar agora.</strong>
-                <p class="form-status__text">Revise os campos, confirme se as informa&ccedil;&otilde;es obrigat&oacute;rias foram preenchidas e tente novamente.</p>
+                <strong class="form-status__title">Não foi possível enviar agora.</strong>
+                <p class="form-status__text">Revise os campos, confirme se as informações obrigatórias foram preenchidas e tente novamente.</p>
             `
         }
     };

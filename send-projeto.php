@@ -13,7 +13,7 @@ $to = 'comercial@agenciajv.com';
 $from = 'site@agenciajv.com';
 
 $budgetOptions = [
-    'ate_2_mil' => 'Ate R$ 2 mil',
+    'ate_2_mil' => 'Até R$ 2 mil',
     '2_a_5_mil' => 'De R$ 2 mil a R$ 5 mil',
     '5_a_10_mil' => 'De R$ 5 mil a R$ 10 mil',
     '10_a_20_mil' => 'De R$ 10 mil a R$ 20 mil',
@@ -175,7 +175,7 @@ if (!array_key_exists($investmentBudget, $budgetOptions)) {
 }
 
 $ipAddress = $_SERVER['REMOTE_ADDR'] ?? '';
-$ipAddress = filter_var($ipAddress, FILTER_VALIDATE_IP) ? $ipAddress : 'Nao informado';
+$ipAddress = filter_var($ipAddress, FILTER_VALIDATE_IP) ? $ipAddress : 'Não informado';
 
 $subject = 'Novo briefing de projeto - JV Digital';
 $messageLines = [
@@ -185,7 +185,7 @@ $messageLines = [
     'CNPJ: ' . format_cnpj($companyCnpj),
     'E-mail: ' . $validatedEmail,
     'Telefone: ' . $companyPhoneInput,
-    'Quanto esta disposto a pagar: ' . $budgetOptions[$investmentBudget],
+    'Quanto está disposto a pagar: ' . $budgetOptions[$investmentBudget],
     'Maior dor no momento: ' . $currentPain,
     'Data/hora: ' . date('d/m/Y H:i:s'),
     'IP: ' . $ipAddress,
