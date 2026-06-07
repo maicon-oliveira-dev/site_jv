@@ -8,9 +8,26 @@
     }
 
     const mobileQuery = window.matchMedia("(max-width: 900px)");
+    const navLinks = Array.from(mainNav.querySelectorAll("a"));
     let isOpen = false;
 
     const isMobileViewport = () => mobileQuery.matches;
+
+    const focusFirstLink = () => {
+        const firstLink = navLinks[0];
+        const applyFocus = () => {
+            if (isOpen) {
+                firstLink.focus({ preventScroll: true });
+            }
+        };
+
+        if (!firstLink) {
+            return;
+        }
+
+        window.requestAnimationFrame(applyFocus);
+        window.setTimeout(applyFocus, 180);
+    };
 
     const syncAccessibility = () => {
         menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
@@ -24,12 +41,16 @@
         mainNav.removeAttribute("aria-hidden");
     };
 
-    const closeMenu = () => {
+    const closeMenu = ({ restoreFocus = false } = {}) => {
         isOpen = false;
         mainNav.classList.remove("open");
         menuToggle.classList.remove("open");
         body.classList.remove("menu-open");
         syncAccessibility();
+
+        if (restoreFocus) {
+            menuToggle.focus();
+        }
     };
 
     const openMenu = () => {
@@ -42,11 +63,12 @@
         menuToggle.classList.add("open");
         body.classList.add("menu-open");
         syncAccessibility();
+        focusFirstLink();
     };
 
     const toggleMenu = () => {
         if (isOpen) {
-            closeMenu();
+            closeMenu({ restoreFocus: true });
             return;
         }
 
@@ -73,7 +95,7 @@
 
     mainNav.addEventListener("click", (event) => {
         if (event.target === mainNav) {
-            closeMenu();
+            closeMenu({ restoreFocus: true });
         }
     });
 
@@ -94,12 +116,14 @@
 
     document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
-            closeMenu();
+            closeMenu({ restoreFocus: true });
         }
     });
 
-    mainNav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", closeMenu);
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            closeMenu();
+        });
     });
 
     if (typeof mobileQuery.addEventListener === "function") {
