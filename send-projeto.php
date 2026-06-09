@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 date_default_timezone_set('America/Sao_Paulo');
 
-$successRedirect = './contato.html?status=success#projeto';
-$errorRedirect = './contato.html?status=error#projeto';
+$successRedirect = '/contato.html?status=success#projeto';
+$errorRedirect = '/contato.html?status=error#projeto';
 
 // Endereco de destino configurado na HostGator para receber os contatos do site.
 $to = 'comercial@agenciajv.com';

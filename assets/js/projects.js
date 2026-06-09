@@ -12,7 +12,7 @@
         || /site|landing|sistema|front-end/i.test(`${project.category || ""} ${project.services?.join(" ") || ""}`);
     const projectKind = (project) => isSiteProject(project) ? "site" : "design";
     const projectExternalUrl = (project) => project.siteUrl || project.liveUrl || project.behanceUrl || project.sourceUrl || "";
-    const projectUrl = (project) => projectExternalUrl(project) || `./projeto.html?id=${encodeURIComponent(project.id)}`;
+    const projectUrl = (project) => projectExternalUrl(project) || `/projeto.html?id=${encodeURIComponent(project.id)}`;
     const projectLinkAttrs = (project) => isExternalUrl(projectUrl(project)) ? ' target="_blank" rel="noopener noreferrer"' : "";
 
     const renderVisual = (project, modifier = "") => {
@@ -134,7 +134,7 @@
                             <span class="section-tag">Projeto</span>
                             <h1>Projeto não encontrado.</h1>
                             <p>Volte para a lista de projetos e escolha outro trabalho.</p>
-                            <a href="./projetos.html" class="btn btn-primary">Ver projetos</a>
+                            <a href="/projetos.html" class="btn btn-primary">Ver projetos</a>
                         </div>
                     </div>
                 </section>
@@ -165,7 +165,7 @@
                         <h1>${escapeHtml(project.title)}</h1>
                         <p class="lead">${escapeHtml(project.description)}</p>
                         <div class="hero-actions">
-                            <a href="./contato.html#projeto" class="btn btn-primary">Quero uma presença nesse nível</a>
+                            <a href="/contato.html#projeto" class="btn btn-primary">Quero uma presença nesse nível</a>
                             ${externalButton}
                         </div>
                     </div>
@@ -220,7 +220,7 @@
                             <p>Conte sua maior dor e o investimento disponível para entender o melhor caminho de projeto.</p>
                         </div>
                         <div class="cta-panel__conversion">
-                            <a href="./contato.html#projeto" class="btn btn-primary">Falar sobre meu projeto</a>
+                            <a href="/contato.html#projeto" class="btn btn-primary">Falar sobre meu projeto</a>
                             <p class="small-note">Conversa objetiva para alinhar dor, escopo e investimento.</p>
                         </div>
                     </div>

@@ -29,7 +29,7 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
 
     const cta = document.createElement("a");
     cta.className = "mobile-diagnostic-cta";
-    cta.href = currentPage === "contato.html" ? "#projeto" : "./contato.html#projeto";
+    cta.href = currentPage === "contato.html" ? "#projeto" : "/contato.html#projeto";
     cta.textContent = "Começar um projeto";
     cta.setAttribute("aria-label", "Começar um projeto com a JV Digital");
     document.body.appendChild(cta);
